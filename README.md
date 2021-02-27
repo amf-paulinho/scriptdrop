@@ -12,43 +12,39 @@ Junior trying to implement something simple and failing. As the days went by thi
 # What would be your next couple of tasks if you had more time?
 I still have a lot to do!
 
-* Use best practices to hide sensitive data, like secret keys from external APIs
+- [ ] Use best practices to hide sensitive data, like secret keys from external APIs
 
-* Develop a more user friendly Interface using Phoenix LiveView, Sockets or even VueJs
+- [ ] Develop a more user friendly Interface using Phoenix LiveView, Sockets or even VueJs
 
-* More application security to prevent attacks
+- [ ] Add Some filters availability to facilitate users life
 
-* I think I did not put unique keys in some necessary places, I would like to double check Everything
+- [ ] Using Socket to Change Order Status, I left a simple combo box, which can break down the business workflow.
 
-* Change a bit the application  “phoenix contexts design patterns”, I don't think I made the best decisions in terms of clarity, 
-  but still pretty decent.
+- [ ] UI Data Formatting
 
-* Some features require filters availability to facilitate users life
+- [ ] More application security to prevent attacks
 
-* Using Socket to Change Order Status, I left a simple combo box, which can break down the business workflow.
+- [ ] I think I did not put unique keys in some necessary places, I would like to double check Everything
 
-* The home page, that is the control panel of pharmacies and couriers must be refactored. 
-  I am using an “IF” that I did not like, but to change this I would need more time to study Phoenix
+- [ ] Change a bit the application  “phoenix contexts design patterns”, I don't think I made the best decisions in terms of clarity, but still pretty decent.
 
-* The system's administrative area should be rethought, but this would take a long time, so I looked for a solution 
-  that could show my skills and also solve the problem.
+- [ ] The home page, that is the control panel of pharmacies and couriers must be refactored.   I am using an “IF” that I did not like, but to change this I would need more time to study Phoenix
 
-* Use more Elixir Pattern Match
+- [ ] The system's administrative area should be rethought, but this would take a long time, so I looked for a solution that could show my skills and also solve the problem.
 
-* UI Data Formatting
+- [ ] Use more Elixir Pattern Match
 
-* Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider'
+- [ ] Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider'
 
-* UI validation (message to the user)
+- [ ] UI validation (message to the user)
 
-* Solve a Bug that a left. I couldn't get the current local date, only UTC, this was frustrating, because I left it for fine-tuning 
-  thinking it would be commonplace, but it is not.
+- [ ] Solve a simple Bug that a left. I couldn't get the current local date, only UTC, this was frustrating, because I left it for fine-tuning thinking it would be commonplace, but it is not.
 
-* Replace Comboboxes to AutoComplete and enable in-line registration of customers, addresses, drugs, etc. For sure using LiveView or Sockets
+- [ ] Replace Comboboxes to AutoComplete and enable in-line registration of customers, addresses, drugs, etc. For sure using LiveView or Sockets
 
-* Create a new entity in the database to track Orders (Business Workflow)
+- [ ] Create a new entity in the database to track Orders (Business Workflow)
 
-* Finish the functionality the able User to enter a list of items that compose an Order
+- [ ] Finish the functionality the able User to enter a list of items that compose an Order
 
 # How could we change the project to be more interesting?
 In fact, this project is very interesting, because I think it was designed in a way that a Junior programmer has the sense of exceeding expectations 
@@ -80,8 +76,8 @@ I already created 2 GitHub accounts for test both already linked with Pharmacy a
 * Edit Line 5 and 6 of this File: /config/dev.exs (enter your postgres credentials)
 
 * From root directory run:
-  > mix ecto.create
-  > mix run priv/repo/seeds.exs 
-  > mix phx.server
+  1. mix ecto.create
+  2. mix run priv/repo/seeds.exs 
+  3. mix phx.server
 
 * Open your browser and access: http://localhost:4000
