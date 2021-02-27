@@ -1,5 +1,7 @@
+![Scriptdrop](https://scriptdrop.co/static/signature-multi-white-2c2041b836444d0792a993a68a088d56.svg)
+
 # What was the hardest part of the implementation?
-This is an excellent question!
+## This is an excellent question!
 
 The fact that I was dedicated 100% to OOP languages in the past years, even though I had understood the paradigms of a functional language, 
 my brain was so used to OOP that it was difficult to find solutions some times, and even when I found them, I dont have doubts that I did not 
@@ -10,7 +12,7 @@ Even the Business part of the application was very clear to me since the first g
 Junior trying to implement something simple and failing. As the days went by this was easing as expected.
  
 # What would be your next couple of tasks if you had more time?
-I still have a lot to do!
+## I still have a lot to do!
 
 - [ ] Use best practices to hide sensitive data, like secret keys from external APIs
 
@@ -47,6 +49,8 @@ I still have a lot to do!
 - [ ] Finish the functionality the able User to enter a list of items that compose an Order
 
 # How could we change the project to be more interesting?
+## For sure this Challange was well desing!
+
 In fact, this project is very interesting, because I think it was designed in a way that a Junior programmer has the sense of exceeding expectations 
 while a Senior would see small clues that show that the system is much deeper than it looks.
 Technically speaking, and taking into account the nature of the language and framework used, requesting requirements that require recursion would 
