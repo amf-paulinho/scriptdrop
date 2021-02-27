@@ -50,8 +50,6 @@ I still have a lot to do!
 
 * Finish the functionality the able User to enter a list of items that compose an Order
 
-
-
 # How could we change the project to be more interesting?
 In fact, this project is very interesting, because I think it was designed in a way that a Junior programmer has the sense of exceeding expectations 
 while a Senior would see small clues that show that the system is much deeper than it looks.
@@ -59,3 +57,31 @@ Technically speaking, and taking into account the nature of the language and fra
 further exploit the programmer's skills in respect to Elixir, another requirement that could be requested and would exploit the programmer's skills in 
 respect to the Phoenix Framework, it would be something related to the social platform, such as comments and evaluation of delivery or even a chat feature, 
 both very simple to do using Phoenix.
+
+# System Login Credentials
+The system uses GitHub for Login. 
+
+I already created 2 GitHub accounts for test both already linked with Pharmacy and Courier
+
+* Pharmacy
+  login: scriptdrop.pharmacy@gmail.com
+  password: scriptdrop1!
+
+* Courier
+  login: scriptdrop.delivery@gmail.com
+  password: scriptdrop1!
+
+# Instalation
+
+* Download and Install Elixir and Phoenix 1.5 and Postgress
+
+* Download App source code from GIT
+
+* Edit Line 5 and 6 of this File: /config/dev.exs (enter your postgres credentials)
+
+* From root directory run:
+  > mix ecto.create
+  > mix run priv/repo/seeds.exs 
+  > mix phx.server
+
+* Open your browser and access: http://localhost:4000
