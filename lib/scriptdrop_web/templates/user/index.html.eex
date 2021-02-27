@@ -1,0 +1,41 @@
+<h1>Listing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Provider</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for user <- @users do %>
+    <tr>
+      <td><%= user.email %></td>
+      <td>  ** </td>
+
+      <td style="width: 115px;">
+
+        <%= link to: Routes.user_path(@conn, :show, user), class: "btn btn-info" do  %>
+          <i class="fa fa-eye fa-lg"></i>
+        <% end %>
+
+        <%= link to: Routes.user_path(@conn, :edit, user), class: "btn btn-info" do  %>
+          <i class="fa fa-pencil-square-o fa-lg"></i>
+        <% end %>
+
+        <%= link to: Routes.user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" do %>
+          <i class="fa fa-trash-o fa-lg"></i>
+        <% end %>
+
+      </td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link to: Routes.user_path(@conn, :new), class: "btn btn-info" do  %>
+  <i class="fa fa-plus fa-3x "></i>
+<% end %>

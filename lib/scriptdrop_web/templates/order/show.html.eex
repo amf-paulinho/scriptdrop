@@ -1,0 +1,49 @@
+<h1>Show Order</h1>
+
+<ul>
+  <li>
+    <strong>Patient Name:</strong>
+    <%= @order.name %>
+  </li>
+
+  <li>
+    <strong>Patient Address:</strong>
+    <%= @order.address %>
+  </li>
+
+  <li>
+    <strong>Courier:</strong>
+    <%= @order.courier %>
+  </li>
+
+  <li>
+    <strong>Pickup date:</strong>
+    <%= @order.pickup_date %>
+  </li>
+
+  <li>
+    <strong>Pickup time:</strong>
+    <%= @order.pickup_time %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @order.status %>
+  </li>
+
+</ul>
+
+<%= link to: Routes.order_path(@conn, :edit, @order), class: "btn btn-info" do  %>
+  <i class="fa fa-edit fa-lg "></i> Edit
+<% end %>
+
+<%= link to: Routes.order_item_path(@conn, :index), class: "btn btn-info" do  %>
+  <i class="fa fa-sitemap" aria-hidden="true"></i> Order Items
+<% end %>
+
+
+
+
+<%= link to: Routes.order_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>

@@ -1,0 +1,18 @@
+<h1>Show Order item</h1>
+
+<ul>
+
+  <li>
+    <strong>Qty:</strong>
+    <%= @order_item.qty %>
+  </li>
+
+</ul>
+
+<%= link to: Routes.order_item_path(@conn, :edit, @order_item), class: "btn btn-info" do  %>
+  <i class="fa fa-edit fa-lg "></i> Edit
+<% end %>
+
+<%= link to: Routes.order_item_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>

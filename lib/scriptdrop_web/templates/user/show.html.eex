@@ -1,0 +1,23 @@
+<h1>Show User</h1>
+
+<ul>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </li>
+
+  <li>
+    <strong>Provider:</strong>
+    <%= @user.provider_id %>
+  </li>
+
+</ul>
+
+<%= link to: Routes.user_path(@conn, :edit, @user), class: "btn btn-info" do  %>
+  <i class="fa fa-edit fa-lg "></i> Edit
+<% end %>
+
+<%= link to: Routes.user_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>

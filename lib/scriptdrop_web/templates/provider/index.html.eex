@@ -1,0 +1,43 @@
+<h1>Listing Providers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Role</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for provider <- @providers do %>
+    <tr>
+      <td><%= provider.name %></td>
+      <td><%= provider.address %></td>
+      <td><%= provider.role %></td>
+
+      <td>
+
+         <%= link to: Routes.provider_path(@conn, :show, provider), class: "btn btn-info" do  %>
+          <i class="fa fa-eye fa-lg"></i>
+        <% end %>
+
+        <%= link to: Routes.provider_path(@conn, :edit, provider), class: "btn btn-info" do  %>
+          <i class="fa fa-pencil-square-o fa-lg"></i>
+        <% end %>
+
+        <%= link to: Routes.provider_path(@conn, :delete, provider), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" do %>
+          <i class="fa fa-trash-o fa-lg"></i>
+        <% end %>
+
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+
+<%= link to: Routes.provider_path(@conn, :new), class: "btn btn-info" do  %>
+  <i class="fa fa-plus fa-3x "></i>
+<% end %>

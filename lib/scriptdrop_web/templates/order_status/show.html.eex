@@ -1,0 +1,18 @@
+<h1>Show Order status</h1>
+
+<ul>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @order_status.description %>
+  </li>
+
+</ul>
+
+<%= link to: Routes.order_status_path(@conn, :edit, @order_status), class: "btn btn-info" do  %>
+  <i class="fa fa-edit fa-lg "></i> Edit
+<% end %>
+
+<%= link to: Routes.order_status_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>

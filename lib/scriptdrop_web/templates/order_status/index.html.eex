@@ -1,0 +1,40 @@
+<h1>Listing Orderstatuses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for order_status <- @orderstatuses do %>
+    <tr>
+      <td><%= order_status.description %></td>
+
+    <td style="width: 115px;">
+
+        <%= link to: Routes.order_status_path(@conn, :show, order_status), class: "btn btn-info" do  %>
+          <i class="fa fa-eye fa-lg"></i>
+        <% end %>
+
+        <%= link to: Routes.order_status_path(@conn, :edit, order_status), class: "btn btn-info" do  %>
+          <i class="fa fa-pencil-square-o fa-lg"></i>
+        <% end %>
+
+        <%= link to: Routes.order_status_path(@conn, :delete, order_status), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" do %>
+          <i class="fa fa-trash-o fa-lg"></i>
+        <% end %>
+
+      </td>
+
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link to: Routes.order_status_path(@conn, :new), class: "btn btn-info" do  %>
+  <i class="fa fa-plus fa-3x "></i>
+<% end %>

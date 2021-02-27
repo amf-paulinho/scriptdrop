@@ -1,0 +1,23 @@
+<h1>Show Client</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @client.name %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @client.address %>
+  </li>
+
+</ul>
+
+<%= link to: Routes.client_path(@conn, :edit, @client), class: "btn btn-info" do  %>
+  <i class="fa fa-edit fa-lg "></i> Edit
+<% end %>
+
+<%= link to: Routes.client_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>

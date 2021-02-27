@@ -1,0 +1,28 @@
+<h1>Show Courier</h1>
+
+<ul>
+
+  <li>
+    <strong>Provider:</strong>
+    <%= @pharma_courier.provider_id %>
+  </li>
+
+  <li>
+    <strong>Courier:</strong>
+    <%= @pharma_courier.courier_id %>
+  </li>
+
+  <li>
+    <strong>Active:</strong>
+    <%= @pharma_courier.active %>
+  </li>
+
+</ul>
+
+<%= link to: Routes.pharma_courier_path(@conn, :edit, @pharma_courier), class: "btn btn-info" do  %>
+  <i class="fa fa-edit fa-lg "></i> Edit
+<% end %>
+
+<%= link to: Routes.pharma_courier_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>

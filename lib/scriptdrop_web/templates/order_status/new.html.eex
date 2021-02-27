@@ -1,0 +1,7 @@
+<h1>New Order status</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.order_status_path(@conn, :create)) %>
+
+<%= link to: Routes.order_status_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>

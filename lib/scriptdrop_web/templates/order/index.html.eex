@@ -1,0 +1,46 @@
+<h1>Listing Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patient Name</th>
+      <th>Delivery Address</th>
+      <th>Courier</th>
+      <th>Expected Pickup</th>
+      <th>Status</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for order <- @orders do %>
+    <tr>
+      <td><%= order.name %></td>
+      <td><%= order.address %></td>
+      <td><%= order.courier %></td>
+      <td><%= order.pickup_date %> &nbsp <%= Time.truncate(order.pickup_time, :second) %></td>
+      <td><%= order.status %></td>
+
+      <td style="width: 115px;">
+
+        <%= link to: Routes.order_path(@conn, :show, order), class: "btn btn-info" do  %>
+          <i class="fa fa-eye fa-lg"></i>
+        <% end %>
+
+        <%= link to: Routes.order_path(@conn, :edit, order), class: "btn btn-info" do  %>
+          <i class="fa fa-pencil-square-o fa-lg"></i>
+        <% end %>
+
+        <%= link to: Routes.order_path(@conn, :delete, order), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" do %>
+          <i class="fa fa-trash-o fa-lg"></i>
+        <% end %>
+
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link to: Routes.order_path(@conn, :new), class: "btn btn-info" do  %>
+  <i class="fa fa-plus fa-3x "></i>
+<% end %>

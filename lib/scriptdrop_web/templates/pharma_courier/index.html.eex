@@ -1,0 +1,37 @@
+<h1>My Couriers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Courier</th>
+      <th>Active</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for pharma_courier <- @pharmacouriers do %>
+    <tr>
+      <td><%= pharma_courier.name %> ( <%= pharma_courier.address %> ) </td>
+      <td><%= pharma_courier.active %></td>
+
+
+  <td style="width: 115px;">
+
+        <%= link to: Routes.pharma_courier_path(@conn, :edit, pharma_courier), class: "btn btn-info" do  %>
+          <i class="fa fa-pencil-square-o fa-lg"></i>
+        <% end %>
+
+        <%= link to: Routes.pharma_courier_path(@conn, :delete, pharma_courier), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" do %>
+          <i class="fa fa-trash-o fa-lg"></i>
+        <% end %>
+
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link to: Routes.pharma_courier_path(@conn, :new), class: "btn btn-info" do  %>
+  <i class="fa fa-plus fa-3x "></i>
+<% end %>

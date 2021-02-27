@@ -1,0 +1,7 @@
+<h1>Edit Drug</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.drug_path(@conn, :update, @drug)) %>
+
+<%= link to: Routes.drug_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>

@@ -1,0 +1,84 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "scriptdrop orders System" %></h1>
+  <p>Building Business Through Prescription Access</p>
+</section>
+<section class="row">
+
+<h1>Orders for the Day (<%= Date.utc_today %> UTC)</h1>
+
+
+<%= if @conn.assigns.user && @conn.assigns.user.providermap.role == 1 do %>
+  <table>
+    <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>Delivery Address</th>
+        <th>Courier</th>
+        <th>Expected Pickup</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for order <- @orders do %>
+      <tr>
+        <td><%= order.name %></td>
+        <td><%= order.address %></td>
+        <td><%= order.courier %></td>
+        <td><%= order.pickup_date %> &nbsp <%= Time.truncate(order.pickup_time, :second) %></td>
+        <td><%= order.status %></td>
+        <td>
+
+          <%= link to: Routes.order_path(@conn, :edit, order), class: "btn btn-warning" do  %>
+            <i class="fa fa-pencil-square-o fa-lg"></i>
+          <% end %>
+
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+<% else %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Pickup At</th>
+        <th>Pickup Time</th>
+        <th>Delivery At</th>
+        <th>Expected Delivery</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for order <- @orders do %>
+      <tr>
+        <td><%= order.pharmacy_name %> ( <%= order.pharmacy_address %> )</td>
+        <td><%= Time.truncate(order.pickup_time, :second) %></td>
+        <td><%= order.delivery_address %> (to: <%= order.name %> )</td>
+        <td> 2H window </td>
+        <td><%= order.status %></td>
+        <td>
+
+          <%= link to: Routes.order_path(@conn, :edit, order), class: "btn btn-warning" do  %>
+            <i class="fa fa-pencil-square-o fa-lg"></i>
+          <% end %>
+
+        </td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+
+
+
+<% end %>
+
+
+
+
+
+
+
+</section>

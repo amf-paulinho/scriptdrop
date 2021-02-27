@@ -1,0 +1,28 @@
+<h1>Show Provider</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @provider.name %>
+  </li>
+
+  <li>
+    <strong>Address:</strong>
+    <%= @provider.address %>
+  </li>
+
+  <li>
+    <strong>Role:</strong>
+    <%= @provider.role %>
+  </li>
+
+</ul>
+
+<%= link to: Routes.provider_path(@conn, :edit, @user), class: "btn btn-info" do  %>
+  <i class="fa fa-edit fa-lg "></i> Edit
+<% end %>
+
+<%= link to: Routes.provider_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>

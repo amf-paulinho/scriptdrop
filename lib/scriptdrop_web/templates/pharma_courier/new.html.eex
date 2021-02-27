@@ -1,0 +1,7 @@
+<h1>Add Courier</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.pharma_courier_path(@conn, :create)) %>
+
+<%= link to: Routes.pharma_courier_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>

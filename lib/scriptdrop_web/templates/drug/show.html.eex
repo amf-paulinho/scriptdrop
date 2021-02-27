@@ -1,0 +1,28 @@
+<h1>Show Drug</h1>
+
+<ul>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @drug.description %>
+  </li>
+
+  <li>
+    <strong>Unit:</strong>
+    <%= @drug.unit %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @drug.price %>
+  </li>
+
+</ul>
+
+<%= link to: Routes.drug_path(@conn, :edit, @drug), class: "btn btn-info" do  %>
+  <i class="fa fa-edit fa-lg "></i> Edit
+<% end %>
+
+<%= link to: Routes.drug_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>
