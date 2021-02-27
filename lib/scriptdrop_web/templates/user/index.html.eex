@@ -5,6 +5,7 @@
     <tr>
       <th>Email</th>
       <th>Provider</th>
+      <th>Role</th>
 
       <th></th>
     </tr>
@@ -13,13 +14,10 @@
 <%= for user <- @users do %>
     <tr>
       <td><%= user.email %></td>
-      <td>  ** </td>
+      <td><%= user.provider_name %></td>
+      <td><%= if user.provider_role == 1, do: "Pharmacy", else: "Courier" %></td>
 
       <td style="width: 115px;">
-
-        <%= link to: Routes.user_path(@conn, :show, user), class: "btn btn-info" do  %>
-          <i class="fa fa-eye fa-lg"></i>
-        <% end %>
 
         <%= link to: Routes.user_path(@conn, :edit, user), class: "btn btn-info" do  %>
           <i class="fa fa-pencil-square-o fa-lg"></i>

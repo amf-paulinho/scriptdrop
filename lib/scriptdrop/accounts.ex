@@ -18,7 +18,12 @@ defmodule Scriptdrop.Accounts do
 
   """
   def list_users do
-    Repo.all(User)
+
+    from( u in "users",
+    join: p in "providers",
+    on: p.id == u.provider_id,
+    select: %Scriptdrop.Accounts.UserAux{id: u.id, email: u.email, provider_name: p.name, provider_role: p.role})
+    |> Repo.all
   end
 
   @doc """

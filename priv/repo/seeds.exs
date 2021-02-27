@@ -48,8 +48,8 @@ seed_data = [
               %Scriptdrop.Logistic.PharmaCourier{id: -1, provider_id: -3, courier_id: -1, active: true},
 
               #Users
-              %Scriptdrop.Accounts.User{id: -2,  email: "amf.paulo.official@gmail.com", provider_id: -5},
-              %Scriptdrop.Accounts.User{id: -1,  email: "myhikingdog@gmail.com", provider_id: -2 },
+              %Scriptdrop.Accounts.User{id: -2,  email: "scriptdrop.pharmacy@gmail.com", provider_id: -5},
+              %Scriptdrop.Accounts.User{id: -1,  email: "scriptdrop.delivery@gmail.com", provider_id: -2 },
 
             ]
 
