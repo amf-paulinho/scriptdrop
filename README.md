@@ -1,4 +1,4 @@
-![Scriptdrop](https://scriptdrop.co/static/signature-multi-white-2c2041b836444d0792a993a68a088d56.svg)
+![Scriptdrop](https://cdn.filepicker.io/api/file/DcyeWRHZTRSIKVeIXJ3l)
 
 # What was the hardest part of the implementation?
 ## This is an excellent question!
