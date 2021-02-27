@@ -58,18 +58,25 @@ further exploit the programmer's skills in respect to Elixir, another requiremen
 respect to the Phoenix Framework, it would be something related to the social platform, such as comments and evaluation of delivery or even a chat feature, 
 both very simple to do using Phoenix.
 
-# System Login Credentials
+# System Login 
 The system uses GitHub for Login. 
 
 I already created 2 GitHub accounts for test both already linked with Pharmacy and Courier
 
 * Pharmacy
-  login: scriptdrop.pharmacy@gmail.com
-  password: scriptdrop1!
+  - login: scriptdrop.pharmacy@gmail.com
+  - password: scriptdrop1!
 
 * Courier
-  login: scriptdrop.delivery@gmail.com
-  password: scriptdrop1!
+  - login: scriptdrop.delivery@gmail.com
+  - password: scriptdrop1!
+
+* If you login in using your own GitHub account
+  - Access the menu: Admin Area -> Users
+  - Find your GitHub email in the list of Users
+  - Click in the Edit icon
+  - Select your provider (Pharmacy or Courier)
+  - Save
 
 # Instalation
 
