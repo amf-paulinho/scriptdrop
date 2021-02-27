@@ -12,7 +12,7 @@ Even the Business part of the application was very clear to me since the first g
 Junior trying to implement something simple and failing. As the days went by this was easing as expected.
  
 # What would be your next couple of tasks if you had more time?
-## I still have a lot to do!
+##  I accomplished the Challenge, even taking some risks extending what was asked, but I think I still have a lot to improve in the app!
 
 - [ ] Use best practices to hide sensitive data, like secret keys from external APIs
 
