@@ -16,7 +16,7 @@ alias Scriptdrop.Repo
 seed_data = [
               #Order Statuses
               %Scriptdrop.Global.OrderStatus{id: -4, description: "Awaiting Courier"},
-              %Scriptdrop.Global.OrderStatus{id: -3, description: "Awaiting Delivery"},
+              %Scriptdrop.Global.OrderStatus{id: -3, description: "On Its Way"},
               %Scriptdrop.Global.OrderStatus{id: -2, description: "Delivered"},
               %Scriptdrop.Global.OrderStatus{id: -1, description: "Canceled"},
 
