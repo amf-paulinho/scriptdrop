@@ -61,7 +61,21 @@ further exploit the programmer's skills in respect to Elixir, another requiremen
 respect to the Phoenix Framework, it would be something related to the social platform, such as comments and evaluation of delivery or even a chat feature, 
 both very simple to do using Phoenix.
 
-# System Login 
+# Wrapping Up !
+## I want to say thank you
+
+This experience was very enriching for me in several aspects, I accepted this challenge with zero knowledge about Elixir / Phoenix and only theory about 
+functional languages, the experience on this journey of just 7 days shows that we can learn and perform beyonde expectations if we leave our comfort zone
+and challange the fear of the unknow. For several years I have been putting myself in situations like this and I advise everyone to do the same, if you
+have the desire to grown in all aspects of your life, you will not regret it. My ability to accept challenges in part is supported by my athleta and 
+martial artist backgroud and I always say that the most important in our challenges is the journey and not the destination. 
+Happiness is not at the destination, but in the Journey, so enjoy every step taken and live the moment, become the moment! 
+I will use the oppotunity to thank you Ben and Even though I am very interested in this position, for several aspects that I loved, now even more because
+Elixir / Phoenix, if I am not chosen one, I will still be very happy and thankfull. Today I feel comfortable adding Elixir / Phoenix to my resume without any hesitation
+and ready for more challanges.
+
+
+# System Login
 The system uses GitHub for Login. 
 
 I already created 2 GitHub accounts for test both already linked with Pharmacy and Courier
