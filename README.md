@@ -20,25 +20,15 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] Add Some filters availability to facilitate users life
 
-- [ ] Using Socket to Change Order Status, I left a simple combo box, which can break down the business workflow.
+- [ ] Improve the Order Workflow and Status Management.
 
 - [ ] UI Data Formatting
 
 - [ ] More application security to prevent attacks
 
-- [ ] I think I did not put unique keys in some necessary places, I would like to double check Everything
-
-- [ ] Change a bit the application  “phoenix contexts design patterns”, I don't think I made the best decisions in terms of clarity, but still pretty decent.
-
-- [ ] The home page, that is the control panel of pharmacies and couriers must be refactored.   I am using an “IF” that I did not like, but to change this I would need more time to study Phoenix
+- [ ] The home page, that is the control panel of pharmacies and couriers must be refactored.   I am using an “IF” that I did not like, but to change this I would need more time to study Phoenix so I deceided dont for now
 
 - [ ] The system's administrative area should be rethought, but this would take a long time, so I looked for a solution that could show my skills and also solve the problem.
-
-- [ ] Use more Elixir Pattern Match
-
-- [ ] Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider'
-
-- [x] UI validation (message to the user)
 
 - [ ] Solve a simple Bug that a left. I couldn't get the current local date, only UTC, this was frustrating, because I left it for fine-tuning thinking it would be commonplace, but it is not.
 
@@ -46,9 +36,21 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] Create a new entity in the database to track Orders (Business Workflow)
 
+- [ ] Make Order feature more real, including fields like: Order Date, etc 
+
+- [ ] I think I did not put unique keys in some necessary places, I would like to double check Everything
+
+- [ ] Change a bit the application  “phoenix contexts design patterns”, I don't think I made the best decisions in terms of clarity, but still pretty decent.
+
+- [ ] Use more Elixir Pattern Match
+
+- [ ] Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider'
+
 - [x] Improve a bit the functionality the able User to enter a list of items that compose an Order. What we have right now, basicly shows the concept. But it is pretty much well done.
 
-- [ ] Make Order feature more real, including fields like: Order Date
+- [x] Using Socket to Change Order Status, I left a simple combo box, which can break down the business workflow.
+
+- [x] UI validation (message to the user)
 
 
 # How could we change the project to be more interesting?

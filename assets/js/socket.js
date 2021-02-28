@@ -54,10 +54,23 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 // Finally, connect to the socket:
 socket.connect()
 
-// Now that you are connected, you can join channels with a topic:
-let channel = socket.channel("topic:subtopic", {})
-channel.join()
-  .receive("ok", resp => { console.log("Joined successfully", resp) })
-  .receive("error", resp => { console.log("Unable to join", resp) })
+
+$("[changestatus='true']").click(function() {
+
+  var orderId = $(this).data("id");
+  var cancelStatus = $(this).data("status");
+
+  let channel = socket.channel(`orderworkflow:${orderId}`, {})
+  channel.join()
+    .receive("ok", resp => { console.log("Joined successfully", resp) })
+    .receive("error", resp => { console.log("Unable to join", resp) })
+
+
+  channel.push(`Chance Status to: ${cancelStatus} in Order #${orderId}`, {status: cancelStatus});
+
+  location.reload();
+  return false;
+
+});
 
 export default socket

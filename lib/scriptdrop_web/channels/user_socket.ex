@@ -2,7 +2,8 @@ defmodule ScriptdropWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", ScriptdropWeb.RoomChannel
+  channel "orderworkflow:*", ScriptdropWeb.OrderWorkflow
+
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After

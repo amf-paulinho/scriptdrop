@@ -2,6 +2,9 @@ defmodule Scriptdrop.Operation.Order do
   use Ecto.Schema
   import Ecto.Changeset
 
+  #this is just a test and a reminder how to use it
+  #@derive {Poison.Encoder, only: [:status]}
+
   schema "orders" do
     field :pickup_date, :date
     field :pickup_time, :time

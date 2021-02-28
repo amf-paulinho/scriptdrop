@@ -33,7 +33,7 @@ defmodule Scriptdrop.Operation do
       join: s in "orderstatuses",
       on: s.id == o.status,
       where: u.provider_id == ^providerid  and fragment("?::date", o.pickup_date) == ^date,
-      select: %Scriptdrop.Operation.OrderAux{id: o.id, pickup_date: o.pickup_date, pickup_time: o.pickup_time, status: s.description, client_id: o.client_id, courier_id: o.courier_id, user_id: o.user_id, name: c.name, address: c.address, courier: co.name, delivery_address: o.delivery_address, use_file_address: o.use_file_address})
+      select: %Scriptdrop.Operation.OrderAux{id: o.id, pickup_date: o.pickup_date, pickup_time: o.pickup_time, status_id: o.status, status: s.description, client_id: o.client_id, courier_id: o.courier_id, user_id: o.user_id, name: c.name, address: c.address, courier: co.name, delivery_address: o.delivery_address, use_file_address: o.use_file_address})
       |> Repo.all
 
     end
@@ -53,7 +53,7 @@ defmodule Scriptdrop.Operation do
     join: s in "orderstatuses",
     on: s.id == o.status,
     where: u.provider_id == ^providerid,
-    select: %Scriptdrop.Operation.OrderAux{id: o.id, pickup_date: o.pickup_date, pickup_time: o.pickup_time, status: s.description, client_id: o.client_id, courier_id: o.courier_id, user_id: o.user_id, name: c.name, address: c.address, courier: co.name, delivery_address: o.delivery_address, use_file_address: o.use_file_address})
+    select: %Scriptdrop.Operation.OrderAux{id: o.id, pickup_date: o.pickup_date, pickup_time: o.pickup_time, status_id: o.status, status: s.description, client_id: o.client_id, courier_id: o.courier_id, user_id: o.user_id, name: c.name, address: c.address, courier: co.name, delivery_address: o.delivery_address, use_file_address: o.use_file_address})
     |> Repo.all
 
   end
@@ -73,7 +73,7 @@ defmodule Scriptdrop.Operation do
       join: s in "orderstatuses",
       on: s.id == o.status,
       where: o.courier_id == ^providerid and fragment("?::date", o.pickup_date) == ^date,
-      select: %Scriptdrop.Operation.OrderAux{id: o.id, pickup_date: o.pickup_date, pickup_time: o.pickup_time, status: s.description, client_id: o.client_id, courier_id: o.courier_id, user_id: o.user_id, name: c.name, address: c.address, courier: courie.name, delivery_address: o.delivery_address, use_file_address: o.use_file_address, pharmacy_address: pharma.address, pharmacy_name: pharma.name})
+      select: %Scriptdrop.Operation.OrderAux{id: o.id, pickup_date: o.pickup_date, pickup_time: o.pickup_time, status_id: o.status, status: s.description, client_id: o.client_id, courier_id: o.courier_id, user_id: o.user_id, name: c.name, address: c.address, courier: courie.name, delivery_address: o.delivery_address, use_file_address: o.use_file_address, pharmacy_address: pharma.address, pharmacy_name: pharma.name})
       |> Repo.all
 
     end
@@ -110,7 +110,7 @@ defmodule Scriptdrop.Operation do
     join: s in "orderstatuses",
     on: s.id == o.status,
     where: o.id == ^int,
-    select: %Scriptdrop.Operation.OrderAux{id: o.id, pickup_date: o.pickup_date, pickup_time: o.pickup_time, status: s.description, client_id: o.client_id, courier_id: o.courier_id, user_id: o.user_id, name: c.name, address: c.address, courier: co.name, delivery_address: o.delivery_address, use_file_address: o.use_file_address})
+    select: %Scriptdrop.Operation.OrderAux{id: o.id, pickup_date: o.pickup_date, pickup_time: o.pickup_time, status_id: o.status, status: s.description, client_id: o.client_id, courier_id: o.courier_id, user_id: o.user_id, name: c.name, address: c.address, courier: co.name, delivery_address: o.delivery_address, use_file_address: o.use_file_address})
     |> Repo.one
 
   end

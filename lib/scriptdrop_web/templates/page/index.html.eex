@@ -1,3 +1,5 @@
+
+
 <section class="phx-hero">
   <h1><%= gettext "Welcome to %{name}!", name: "scriptdrop orders System" %></h1>
   <p>Building Business Through Prescription Access</p>
@@ -29,9 +31,21 @@
         <td><%= order.status %></td>
         <td>
 
-          <%= link to: Routes.order_path(@conn, :edit, order), class: "btn btn-warning" do  %>
-            <i class="fa fa-pencil-square-o fa-lg"></i>
-          <% end %>
+            <%= if order.status_id == -1 do %>
+               <i changestatus='false' data-toggle="tooltip" title='This order was canceled' class="fa fa-times fa-lg text-danger"  ></i>
+            <% end %>
+
+            <%= if order.status_id == -2 do %>
+               <i changestatus='false' data-toggle="tooltip" title='Good News: They accomplished the task!' class="fa fa-check fa-lg text-success"  ></i>
+            <% end %>
+
+            <%= if order.status_id == -3 do %>
+               <i changestatus='false' data-toggle="tooltip" title='On Its Way: Courier had picked up the package' class="fa fa-handshake-o fa-lg text-primary"  ></i>
+            <% end %>
+
+            <%= if order.status_id == -4 do %>
+               <i changestatus='true' data-status='-1' data-id='<%= order.id %>' data-toggle="tooltip" title='Cancel Order (No confirmation!)'  class="fa fa-times fa-lg text-danger"  style="cursor:pointer;"></i>
+            <% end %>
 
         </td>
       </tr>
@@ -59,11 +73,26 @@
         <td><%= order.delivery_address %> (to: <%= order.name %> )</td>
         <td> 2H window </td>
         <td><%= order.status %></td>
-        <td>
 
-          <%= link to: Routes.order_path(@conn, :edit, order), class: "btn btn-warning" do  %>
-            <i class="fa fa-pencil-square-o fa-lg"></i>
-          <% end %>
+
+        <td>
+            <%= if order.status_id == -1 do %>
+               <i changestatus='false' data-toggle="tooltip" title='Bad news: Unfortunately this order was canceled' class="fa fa-times fa-lg text-danger" ></i>
+            <% end %>
+
+            <%= if order.status_id == -2 do %>
+               <i changestatus='false' data-toggle="tooltip" title='Mission accomplished!' class="fa fa-check fa-lg text-success"  ></i>
+            <% end %>
+
+            <%= if order.status_id == -3 do %>
+               <i changestatus='true' data-status='-2' data-id='<%= order.id %>' data-toggle="tooltip" title='We did it: Delivered!' class="fa fa-check fa-lg text-success"  style="cursor:pointer;"></i>
+            <% end %>
+
+            <%= if order.status_id == -4 do %>
+               <i changestatus='true' data-status='-3' data-id='<%= order.id %>' data-toggle="tooltip" title='I got this: I am picking up your package' class="fa fa-handshake-o fa-lg text-primary"  style="cursor:pointer;"></i>
+            <% end %>
+
+        </td>
 
         </td>
       </tr>
