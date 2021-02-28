@@ -61,7 +61,7 @@ further exploit the programmer's skills in respect to Elixir, another requiremen
 respect to the Phoenix Framework, it would be something related to the social platform, such as comments and evaluation of delivery or even a chat feature, 
 both very simple to do using Phoenix.
 
-![Zen](https://st.depositphotos.com/2012693/1941/i/600/depositphotos_19417177-stock-photo-zen-path-of-stones-on.jpg)
+![Zen](https://www.srtc.org/wp-content/uploads/2018/12/meditation-class-fremantle1-e1454334609459-1080x587.png)
 
 
 # Wrapping Up !
