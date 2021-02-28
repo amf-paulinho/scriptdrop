@@ -194,7 +194,6 @@ defmodule Scriptdrop.Operation do
 
   """
   def list_orderitems do
-    IO.puts("++++++++++++++++++++++123")
     Repo.all(OrderItem)
   end
 
