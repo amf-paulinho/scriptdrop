@@ -84,7 +84,7 @@ defmodule Scriptdrop.OperationTest do
 
     test "list_orderitems/0 returns all orderitems" do
       order_item = order_item_fixture()
-      assert Operation.list_orderitems() == [order_item]
+      assert Operation.list_orderitems(1) == [order_item]
     end
 
     test "get_order_item!/1 returns the order_item with given id" do

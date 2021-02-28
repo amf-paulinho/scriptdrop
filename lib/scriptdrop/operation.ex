@@ -193,8 +193,13 @@ defmodule Scriptdrop.Operation do
       [%OrderItem{}, ...]
 
   """
-  def list_orderitems do
-    Repo.all(OrderItem)
+  def list_orderitems(order_id) do
+    {int, _x} = Integer.parse(order_id)
+
+    from( o in "orderitems",
+    where: o.order_id == ^int,
+    select: %Scriptdrop.Operation.OrderItem {id: o.id, qty: o.qty, drug_id: o.drug_id, order_id: o.order_id, price: o.price})
+    |> Repo.all
   end
 
   @doc """

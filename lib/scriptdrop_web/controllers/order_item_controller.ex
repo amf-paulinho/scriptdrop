@@ -4,51 +4,73 @@ defmodule ScriptdropWeb.OrderItemController do
   alias Scriptdrop.Operation
   alias Scriptdrop.Operation.OrderItem
 
-  def index(conn, _params) do
 
-    orderitems = Operation.list_orderitems()
-    render(conn, "index.html", orderitems: orderitems)
-  end
+  def new(conn, %{"id" => id}) do
+    order = Operation.get_order!(id)
 
-  def new(conn, _params) do
-    changeset = Operation.change_order_item(%OrderItem{})
-    render(conn, "new.html", changeset: changeset)
+    changeset = Operation.change_order_item(%OrderItem{order_id: order.id})
+
+    drugs =
+      Scriptdrop.Global.list_drugs
+      |> Enum.map(&{"#{&1.description}", &1.id})
+
+
+    render(conn, "new.html", changeset: changeset, drugs: drugs, order_item: %OrderItem{order_id: id})
   end
 
   def create(conn, %{"order_item" => order_item_params}) do
     case Operation.create_order_item(order_item_params) do
-      {:ok, order_item} ->
+      {:ok, _order_item} ->
         conn
         |> put_flash(:info, "Order item created successfully.")
-        |> redirect(to: Routes.order_item_path(conn, :show, order_item))
+        |> redirect(to: Routes.order_path(conn, :show, %Scriptdrop.Operation.Order{id: order_item_params["order_id"]}))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        drugs =
+          Scriptdrop.Global.list_drugs
+          |> Enum.map(&{"#{&1.description}", &1.id})
+
+        render(conn, "new.html", changeset: changeset, drugs: drugs)
     end
   end
 
   def show(conn, %{"id" => id}) do
     order_item = Operation.get_order_item!(id)
-    render(conn, "show.html", order_item: order_item)
+
+    drugs =
+      Scriptdrop.Global.list_drugs
+      |> Enum.map(&{"#{&1.description}", &1.id})
+
+    render(conn, "show.html", order_item: order_item, drugs: drugs)
   end
 
   def edit(conn, %{"id" => id}) do
     order_item = Operation.get_order_item!(id)
     changeset = Operation.change_order_item(order_item)
-    render(conn, "edit.html", order_item: order_item, changeset: changeset)
+
+    drugs =
+      Scriptdrop.Global.list_drugs
+      |> Enum.map(&{"#{&1.description}", &1.id})
+
+    render(conn, "edit.html", order_item: order_item, changeset: changeset, drugs: drugs)
   end
 
   def update(conn, %{"id" => id, "order_item" => order_item_params}) do
     order_item = Operation.get_order_item!(id)
 
     case Operation.update_order_item(order_item, order_item_params) do
-      {:ok, order_item} ->
+      {:ok, _order_item} ->
         conn
         |> put_flash(:info, "Order item updated successfully.")
-        |> redirect(to: Routes.order_item_path(conn, :show, order_item))
+        |> redirect(to: Routes.order_path(conn, :show, %Scriptdrop.Operation.Order{id: order_item_params["order_id"]}))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", order_item: order_item, changeset: changeset)
+
+        drugs =
+          Scriptdrop.Global.list_drugs
+          |> Enum.map(&{"#{&1.description}", &1.id})
+
+        render(conn, "edit.html", order_item: order_item, changeset: changeset, drugs: drugs)
     end
   end
 
@@ -58,6 +80,6 @@ defmodule ScriptdropWeb.OrderItemController do
 
     conn
     |> put_flash(:info, "Order item deleted successfully.")
-    |> redirect(to: Routes.order_item_path(conn, :index))
+    |> redirect(to: Routes.order_path(conn, :show, %Scriptdrop.Operation.Order{id: order_item.order_id}))
   end
 end

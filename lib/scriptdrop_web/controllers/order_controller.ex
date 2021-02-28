@@ -45,7 +45,10 @@ defmodule ScriptdropWeb.OrderController do
 
   def show(conn, %{"id" => id}) do
     order = Operation.get_order_to_show!(id)
-    render(conn, "show.html", order: order)
+
+    orderitems = Operation.list_orderitems(id)
+
+    render(conn, "show.html", order: order, orderitems: orderitems)
   end
 
   def edit(conn, %{"id" => id}) do

@@ -5,9 +5,19 @@
     </div>
   <% end %>
 
+  <%= label f, :drug_id  %>
+  <%= select f, :drug_id, @drugs %>
+  <%= error_tag f, :drug_id %>
+
   <%= label f, :qty %>
   <%= number_input f, :qty %>
   <%= error_tag f, :qty %>
+
+  <%= label f, :price %>
+  <%= number_input f, :price %>
+  <%= error_tag f, :price %>
+
+  <%= hidden_input f, :order_id %>
 
   <div>
     <%= submit "Save" %>

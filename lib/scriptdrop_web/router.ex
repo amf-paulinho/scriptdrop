@@ -29,6 +29,8 @@ defmodule ScriptdropWeb.Router do
     resources "/providers", ProviderController
     resources "/pharmacouriers", PharmaCourierController
 
+    get "/orderitems/:id/new", OrderItemController, :new
+
   end
 
   scope "/auth", ScriptdropWeb do

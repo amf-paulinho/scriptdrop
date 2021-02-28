@@ -3,8 +3,18 @@
 <ul>
 
   <li>
+    <strong>Medication:</strong>
+    <%= @order_item.qty %>
+  </li>
+
+  <li>
     <strong>Qty:</strong>
     <%= @order_item.qty %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @order_item.price %>
   </li>
 
 </ul>
@@ -13,6 +23,6 @@
   <i class="fa fa-edit fa-lg "></i> Edit
 <% end %>
 
-<%= link to: Routes.order_item_path(@conn, :index), class: "btn btn-light" do  %>
+<%= link to: Routes.order_path(@conn, :show, %Scriptdrop.Operation.Order{id: @order_item.order_id }), class: "btn btn-light" do  %>
   <i class="fa fa-undo fa-lg "></i> Back
 <% end %>

@@ -23,9 +23,22 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        background-color: black;
         color: white;
         text-align: center;
+        /* Temporary Code - There are cleaner way to do it, also need to solve providermap filed bug - see Controller Action */
+        background-color: <%=
+            if @conn.assigns.user && @conn.assigns.user.id do
+
+               if @conn.assigns.user.provider == "Pharmacy" do
+                  "Blue"
+               else
+                  "Green"
+               end
+
+            else
+               "Black"
+            end
+        %>;
       }
     </style>
 
@@ -46,8 +59,8 @@
             Maintain
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><%= link "Clients", to: Routes.client_path(@conn, :index), class: "nav-link" %></li>
-            <li><%= link "Drugs", to: Routes.drug_path(@conn, :index), class: "nav-link" %></li>
+            <li><%= link "Patients", to: Routes.client_path(@conn, :index), class: "nav-link" %></li>
+            <li><%= link "Meds", to: Routes.drug_path(@conn, :index), class: "nav-link" %></li>
             <li><%= link "Couriers", to: Routes.pharma_courier_path(@conn, :index), class: "nav-link" %></li>
           </ul>
         </li>
@@ -107,11 +120,15 @@
       <%= @inner_content %>
     </main>
 
-    <div class="footer">
-      <span class="nav-link">
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Hello, <%= @conn.assigns.user.email  %>
-      </span>
-    </div>
+      <div class="footer">
+        <span class="nav-link">
+          <%= if @conn.assigns.user && @conn.assigns.user.id do %>
+             <i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Hello, <%= @conn.assigns.user.email  %>&nbsp;( <%= @conn.assigns.user.provider  %>&nbsp;)
+          <% else %>
+             <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;Hello, Anonymous&nbsp;( Guest&nbsp;)
+          <% end %>
+        </span>
+      </div>
 
   </body>
 </html>

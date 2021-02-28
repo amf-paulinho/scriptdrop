@@ -38,7 +38,7 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider'
 
-- [ ] UI validation (message to the user)
+- [x] UI validation (message to the user)
 
 - [ ] Solve a simple Bug that a left. I couldn't get the current local date, only UTC, this was frustrating, because I left it for fine-tuning thinking it would be commonplace, but it is not.
 
@@ -46,7 +46,10 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] Create a new entity in the database to track Orders (Business Workflow)
 
-- [ ] Finish the functionality the able User to enter a list of items that compose an Order
+- [x] Improve a bit the functionality the able User to enter a list of items that compose an Order. What we have right now, basicly shows the concept. But it is pretty much well done.
+
+- [ ] Make Order feature more real, including fields like: Order Date
+
 
 # How could we change the project to be more interesting?
 ## For sure this Challange was well desing!
