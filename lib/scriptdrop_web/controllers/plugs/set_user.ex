@@ -20,10 +20,7 @@ defmodule Scriptdrop.Plugs.SetUser do
           #user Role and test it at app.html
           #TODO: Solve this Bug
 
-
-
-
-          user = %User{user | provider: getrole(prov.role)}
+          user = %User{user | provider: "from .::" <> prov.name <> "::. .::" <> getrole(prov.role) <> "::." }
 
           assign(conn, :user, user |> Map.put(:providermap, prov ) )
         true ->

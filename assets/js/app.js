@@ -13,9 +13,3 @@ import "../css/app.scss"
 //     import socket from "./socket"
 //
 import "phoenix_html"
-
-$(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-  })
-
-  

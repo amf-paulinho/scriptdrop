@@ -11,10 +11,11 @@
 
     <script defer type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
-
     <script defer type="text/javascript" src="https://unpkg.com/@popperjs/core@2"></script>
     <script defer type="text/javascript" src="https://use.fontawesome.com/02fcc8cc7e.js"></script>
+
+    <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+
 
 
     <style>
@@ -123,7 +124,7 @@
       <div class="footer">
         <span class="nav-link">
           <%= if @conn.assigns.user && @conn.assigns.user.id do %>
-             <i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Hello, <%= @conn.assigns.user.email  %>&nbsp;( <%= @conn.assigns.user.provider  %>&nbsp;)
+             <i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;Hello, <%= @conn.assigns.user.email  %>&nbsp;<%= @conn.assigns.user.provider %>
           <% else %>
              <i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;Hello, Anonymous&nbsp;( Guest&nbsp;)
           <% end %>
