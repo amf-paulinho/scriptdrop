@@ -142,6 +142,7 @@ defmodule Scriptdrop.Logistic do
 
   """
   def list_pharmacouriers(id) do
+
     from( pc in "pharmacouriers",
     join: p in "providers",
     on: p.id == pc.courier_id,

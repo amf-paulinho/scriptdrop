@@ -15,5 +15,7 @@ import "../css/app.scss"
 import "phoenix_html"
 
 $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
   })
+
+  

@@ -15,7 +15,8 @@
     <tr>
       <td><%= provider.name %></td>
       <td><%= provider.address %></td>
-      <td><%= provider.role %></td>
+       <td><%= if provider.role == 1, do: "Pharmacy", else: "Courier" %></td>
+
 
       <td>
 

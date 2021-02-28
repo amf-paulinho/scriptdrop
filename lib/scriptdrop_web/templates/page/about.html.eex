@@ -23,6 +23,19 @@
                     <b>password:</b> scriptdrop1!<br />
                 </p>
 
+                <p>
+                    <u><b>If you want to use your own GitHub account</b></u><br />
+                       <i>
+                         * After you logged in, Access the menu: Admin Area -> Users <br />
+                         * Find your GitHub email in the list of Users <br />
+                         * Click in the Edit icon <br />
+                         * Select your provider (Pharmacy or Courier) </b><br />
+                         * Save
+                        </i>
+
+                </p>
+
+
             </div>
         </div>
     </div>

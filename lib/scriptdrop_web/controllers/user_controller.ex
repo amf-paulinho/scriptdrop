@@ -40,6 +40,8 @@ defmodule ScriptdropWeb.UserController do
   end
 
   def edit(conn, %{"id" => id}) do
+
+
     user = Accounts.get_user!(id)
     changeset = Accounts.change_user(user)
 

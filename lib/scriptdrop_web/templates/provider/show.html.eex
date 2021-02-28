@@ -14,7 +14,7 @@
 
   <li>
     <strong>Role:</strong>
-    <%= @provider.role %>
+    <td><%= if @provider.role == 1, do: "Pharmacy", else: "Courier" %></td>
   </li>
 
 </ul>

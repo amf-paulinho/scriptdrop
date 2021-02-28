@@ -19,6 +19,8 @@ defmodule ScriptdropWeb.ProviderController do
   end
 
   def create(conn, %{"provider" => provider_params}) do
+
+
     case Logistic.create_provider(provider_params) do
       {:ok, provider} ->
         conn
@@ -26,7 +28,10 @@ defmodule ScriptdropWeb.ProviderController do
         |> redirect(to: Routes.provider_path(conn, :show, provider))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        providerroles = Logistic.list_providerroles
+        |> Enum.map(&{"#{&1.description}", &1.id})
+
+        render(conn, "new.html", changeset: changeset, providerroles: providerroles)
     end
   end
 
@@ -55,16 +60,36 @@ defmodule ScriptdropWeb.ProviderController do
         |> redirect(to: Routes.provider_path(conn, :show, provider))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", provider: provider, changeset: changeset)
+        providerroles = Logistic.list_providerroles
+        |> Enum.map(&{"#{&1.description}", &1.id})
+
+        render(conn, "edit.html", provider: provider, changeset: changeset, providerroles: providerroles)
     end
   end
 
   def delete(conn, %{"id" => id}) do
-    provider = Logistic.get_provider!(id)
-    {:ok, _provider} = Logistic.delete_provider(provider)
 
-    conn
-    |> put_flash(:info, "Provider deleted successfully.")
-    |> redirect(to: Routes.provider_path(conn, :index))
+    # i have to refactor that for sure !
+
+    if notmainprovider(id) do
+       msg = "Provider deleted successfully."
+       provider = Logistic.get_provider!(id)
+       {:ok, _provider} = Logistic.delete_provider(provider)
+       conn
+       |> put_flash(:info, msg)
+       |> redirect(to: Routes.provider_path(conn, :index))
+
+    else
+      msg = "You cannot delete the main provider."
+      conn
+      |> put_flash(:info, msg)
+      |> redirect(to: Routes.provider_path(conn, :index))
+
+    end
+
+  end
+
+  defp notmainprovider(id) do
+    id != -5
   end
 end
