@@ -69,7 +69,7 @@ both very simple to do using Phoenix.
 # Wrapping Up !
 ## It was Awesome
 
-This experience was very enriching for me in several aspects, I accepted this challenge with zero knowledge about Elixir / Phoenix and only theory about 
+This experience was very enriching in several aspects, I accepted this challenge with zero knowledge about Elixir / Phoenix and only theory about 
 functional languages, the experience on this journey of just 7 days shows that we can learn and perform beyonde expectations if we leave our comfort zone
 and challange the fear of the unknow. For several years I have been putting myself in situations like this and I advise everyone to do the same, if you
 have the desire to grown in all aspects of your life, you will not regret it. My ability to accept challenges in part is supported by my athleta and 
