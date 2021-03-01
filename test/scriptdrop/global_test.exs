@@ -6,9 +6,9 @@ defmodule Scriptdrop.GlobalTest do
   describe "drugs" do
     alias Scriptdrop.Global.Drug
 
-    @valid_attrs %{description: "some description", unit: "some unit"}
-    @update_attrs %{description: "some updated description", unit: "some updated unit"}
-    @invalid_attrs %{description: nil, unit: nil}
+    @valid_attrs %{description: "some description", unit: "some unit", qty: 1, price: 1}
+    @update_attrs %{description: "some updated description", unit: "some updated unit", qty: 2, price: 2}
+    @invalid_attrs %{description: nil, unit: nil, qty: nil, price: nil}
 
     def drug_fixture(attrs \\ %{}) do
       {:ok, drug} =

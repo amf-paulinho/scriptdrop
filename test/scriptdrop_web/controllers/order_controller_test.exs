@@ -3,9 +3,9 @@ defmodule ScriptdropWeb.OrderControllerTest do
 
   alias Scriptdrop.Operation
 
-  @create_attrs %{pickup_date: ~D[2010-04-17], pickup_time: ~T[14:00:00], status: 42}
-  @update_attrs %{pickup_date: ~D[2011-05-18], pickup_time: ~T[15:01:01], status: 43}
-  @invalid_attrs %{pickup_date: nil, pickup_time: nil, status: nil}
+  @create_attrs %{pickup_date: ~D[2010-04-17], pickup_time: ~T[14:00:00], status: 42, client_id: 1, courier_id: 1, user_id: 1, delivery_address: "address", use_file_address: true}
+  @update_attrs %{pickup_date: ~D[2011-05-18], pickup_time: ~T[15:01:01], status: 43, client_id: 2, courier_id: 2, user_id: 2, delivery_address: "other address", use_file_address: false}
+  @invalid_attrs %{pickup_date: nil, pickup_time: nil, status: nil, client_id: nil, courier_id: nil, user_id: nil, delivery_address: nil, use_file_address: nil}
 
   def fixture(:order) do
     {:ok, order} = Operation.create_order(@create_attrs)

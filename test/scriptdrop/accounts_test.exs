@@ -6,9 +6,9 @@ defmodule Scriptdrop.AccountsTest do
   describe "users" do
     alias Scriptdrop.Accounts.User
 
-    @valid_attrs %{email: "some email", provider: "some provider",  token: "some token"}
-    @update_attrs %{email: "some updated email", provider: "some updated provider", token: "some updated token"}
-    @invalid_attrs %{email: nil, provider: nil, role: nil, token: nil}
+    @valid_attrs %{email: "some email", provider: "some provider",  token: "some token", provider_id: 1}
+    @update_attrs %{email: "some updated email", provider: "some updated provider", token: "some updated token", provider_id: 2}
+    @invalid_attrs %{email: nil, provider: nil, role: nil, token: nil, provider_id: nil}
 
     def user_fixture(attrs \\ %{}) do
       {:ok, user} =
@@ -34,6 +34,8 @@ defmodule Scriptdrop.AccountsTest do
       assert user.email == "some email"
       assert user.provider == "some provider"
       assert user.token == "some token"
+      assert user.provider_id == 1
+
     end
 
     test "create_user/1 with invalid data returns error changeset" do
@@ -46,6 +48,7 @@ defmodule Scriptdrop.AccountsTest do
       assert user.email == "some updated email"
       assert user.provider == "some updated provider"
       assert user.token == "some updated token"
+      assert user.provider_id == 1
     end
 
     test "update_user/2 with invalid data returns error changeset" do

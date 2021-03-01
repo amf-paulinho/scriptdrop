@@ -7,7 +7,7 @@ defmodule Scriptdrop.Accounts.User do
     field :provider, :string
     field :token, :string
     field :provider_id, :integer
-    has_many :orders, Scriptdrop.Operation.Order
+    #has_many :orders, Scriptdrop.Operation.Order
 
     timestamps()
   end

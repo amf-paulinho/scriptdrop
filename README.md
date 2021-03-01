@@ -46,7 +46,7 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider'
 
-- [ ] I have to improve the test coverage
+- [ ] I have to improve the test coverage. Also I have some test failing due a big refactoring task. I had to fix it.
 
 - [x] Improve a bit the functionality the able User to enter a list of items that compose an Order. What we have right now, basicly shows the concept. But it is pretty much well done.
 

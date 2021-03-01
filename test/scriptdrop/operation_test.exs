@@ -6,9 +6,11 @@ defmodule Scriptdrop.OperationTest do
   describe "orders" do
     alias Scriptdrop.Operation.Order
 
-    @valid_attrs %{pickup_date: ~D[2010-04-17], pickup_time: ~T[14:00:00], status: 42}
-    @update_attrs %{pickup_date: ~D[2011-05-18], pickup_time: ~T[15:01:01], status: 43}
-    @invalid_attrs %{pickup_date: nil, pickup_time: nil, status: nil}
+
+
+    @valid_attrs %{pickup_date: ~D[2010-04-17], pickup_time: ~T[14:00:00], status: 42, client_id: 1, courier_id: 1, user_id: 1, delivery_address: "address", use_file_address: true}
+    @update_attrs %{pickup_date: ~D[2011-05-18], pickup_time: ~T[15:01:01], status: 43, client_id: 2, courier_id: 2, user_id: 2, delivery_address: "other address", use_file_address: false}
+    @invalid_attrs %{pickup_date: nil, pickup_time: nil, status: nil, client_id: nil, courier_id: nil, user_id: nil, delivery_address: nil, use_file_address: nil}
 
     def order_fixture(attrs \\ %{}) do
       {:ok, order} =
@@ -69,9 +71,9 @@ defmodule Scriptdrop.OperationTest do
   describe "orderitems" do
     alias Scriptdrop.Operation.OrderItem
 
-    @valid_attrs %{qty: 42}
-    @update_attrs %{qty: 43}
-    @invalid_attrs %{qty: nil}
+    @valid_attrs %{qty: 42, drug_id: 1, order_id: 1, price: 1}
+    @update_attrs %{qty: 43, drug_id: 2, order_id: 2, price: 2}
+    @invalid_attrs %{qty: nil, drug_id: nil, order_id: nil, price: nil}
 
     def order_item_fixture(attrs \\ %{}) do
       {:ok, order_item} =

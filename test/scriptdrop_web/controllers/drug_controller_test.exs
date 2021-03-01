@@ -3,8 +3,8 @@ defmodule ScriptdropWeb.DrugControllerTest do
 
   alias Scriptdrop.Global
 
-  @create_attrs %{description: "some description", unit: "some unit"}
-  @update_attrs %{description: "some updated description", unit: "some updated unit"}
+  @create_attrs %{description: "some description", unit: "some unit", qty: 1, price: 1}
+  @update_attrs %{description: "some updated description", unit: "some updated unit", qty: 2, price: 2}
   @invalid_attrs %{description: nil, unit: nil}
 
   def fixture(:drug) do

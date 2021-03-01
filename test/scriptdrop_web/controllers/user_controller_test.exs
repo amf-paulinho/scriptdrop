@@ -3,9 +3,9 @@ defmodule ScriptdropWeb.UserControllerTest do
 
   alias Scriptdrop.Accounts
 
-  @create_attrs %{email: "some email", provider: "some provider", role: 42, token: "some token"}
-  @update_attrs %{email: "some updated email", provider: "some updated provider", role: 43, token: "some updated token"}
-  @invalid_attrs %{email: nil, provider: nil, role: nil, token: nil}
+  @create_attrs %{email: "some email", provider: "some provider", token: "some token", provider_id: 1}
+  @update_attrs %{email: "some updated email", provider: "some updated provider", token: "some updated token", provider_id: 2}
+  @invalid_attrs %{email: nil, provider: nil, role: nil, token: nil, provider_id: nil}
 
   def fixture(:user) do
     {:ok, user} = Accounts.create_user(@create_attrs)

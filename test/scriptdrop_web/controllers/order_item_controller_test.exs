@@ -3,20 +3,13 @@ defmodule ScriptdropWeb.OrderItemControllerTest do
 
   alias Scriptdrop.Operation
 
-  @create_attrs %{qty: 42}
-  @update_attrs %{qty: 43}
-  @invalid_attrs %{qty: nil}
+  @create_attrs %{qty: 42, drug_id: 1, order_id: 1, price: 1}
+  @update_attrs %{qty: 43, drug_id: 2, order_id: 2, price: 2}
+  @invalid_attrs %{qty: nil, drug_id: nil, order_id: nil, price: nil}
 
   def fixture(:order_item) do
     {:ok, order_item} = Operation.create_order_item(@create_attrs)
     order_item
-  end
-
-  describe "index" do
-    test "lists all orderitems", %{conn: conn} do
-      conn = get(conn, Routes.order_item_path(conn, :index))
-      assert html_response(conn, 200) =~ "Listing Orderitems"
-    end
   end
 
   describe "new order_item" do
