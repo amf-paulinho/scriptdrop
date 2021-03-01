@@ -102,6 +102,10 @@ I already created 2 GitHub accounts for test both already linked with Pharmacy a
   - Select your provider (Pharmacy or Courier)
   - Save
 
+# Database ERD
+![ERD](https://photos.app.goo.gl/4ytwsq9NHf23edmB8)
+
+
 # Instalation
 
 * Download and Install Elixir and Phoenix 1.5 and Postgress
