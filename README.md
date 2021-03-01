@@ -46,6 +46,8 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider'
 
+- [ ] I have to improve the test coverage
+
 - [x] Improve a bit the functionality the able User to enter a list of items that compose an Order. What we have right now, basicly shows the concept. But it is pretty much well done.
 
 - [x] Using Socket to Change Order Status, I left a simple combo box, which can break down the business workflow.
