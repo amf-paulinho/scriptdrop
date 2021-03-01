@@ -44,7 +44,7 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] Use more Elixir Pattern Match
 
-- [ ] Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider'
+- [ ] Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider', also in the table orders the field status was supposed to be status_id
 
 - [ ] I have to improve the test coverage. Also I have some test failing due a big refactoring task. I had to fix it.
 
