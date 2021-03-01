@@ -44,6 +44,7 @@
             <% end %>
 
             <%= if order.status_id == -4 do %>
+               <i changestatus='false' data-toggle="tooltip" title='Ready to go!'  class="fa fa-clock-o fa-lg text-warning" ></i>
                <i changestatus='true' data-status='-1' data-id='<%= order.id %>' data-toggle="tooltip" title='Cancel Order (No confirmation!)'  class="fa fa-times fa-lg text-danger"  style="cursor:pointer;"></i>
             <% end %>
 
@@ -85,6 +86,7 @@
             <% end %>
 
             <%= if order.status_id == -3 do %>
+               <i changestatus='false' data-toggle="tooltip" title='On Its Way: Courier had picked up the package' class="fa fa-handshake-o fa-lg text-primary"  ></i>
                <i changestatus='true' data-status='-2' data-id='<%= order.id %>' data-toggle="tooltip" title='We did it: Delivered!' class="fa fa-check fa-lg text-success"  style="cursor:pointer;"></i>
             <% end %>
 

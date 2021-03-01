@@ -1,4 +1,21 @@
 <h1>Edit Order</h1>
+<h2><span class="badge badge-secondary">
+<%= if @order.status == -1 do %>
+    <i changestatus='false' data-toggle="tooltip" title='<%= @order.status %>' class="fa fa-times fa-lg text-danger"  ></i>
+<% end %>
+
+<%= if @order.status == -2 do %>
+    <i changestatus='false' data-toggle="tooltip" title='<%= @order.status %>' class="fa fa-check fa-lg text-success"  ></i>
+<% end %>
+
+<%= if @order.status == -3 do %>
+    <i changestatus='false' data-toggle="tooltip" title='<%= @order.status %>' class="fa fa-handshake-o fa-lg text-primary"  ></i>
+<% end %>
+
+<%= if @order.status == -4 do %>
+    <i changestatus='false' data-toggle="tooltip" title='<%= @order.status %>'  class="fa fa-clock-o fa-lg text-warning" ></i>
+<% end %>
+</span></h2>
 
 <%= render "form.html", Map.put(assigns, :action, Routes.order_path(@conn, :update, @order)) %>
 

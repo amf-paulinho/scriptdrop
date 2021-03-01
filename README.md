@@ -20,7 +20,7 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] Add Some filters availability to facilitate users life
 
-- [ ] Improve the Order Workflow and Status Management.
+- [ ] Improve the Order Workflow and Status Management. There are some gaps that need to be addressed
 
 - [ ] UI Data Formatting
 

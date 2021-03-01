@@ -39,7 +39,19 @@ defmodule ScriptdropWeb.OrderController do
         |> redirect(to: Routes.order_path(conn, :show, order))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        clients =
+          Scriptdrop.Global.list_clients
+            |> Enum.map(&{"#{&1.name} at #{&1.address}", &1.id})
+
+        couriers =
+          Scriptdrop.Logistic.list_couriers_by_provider(conn.assigns.user.provider_id)
+            |> Enum.map(&{"#{&1.name}", &1.id})
+
+        statuslist =
+          Scriptdrop.Global.list_orderstatuses
+          |> Enum.map(&{"#{&1.description}", &1.id})
+
+        render(conn, "new.html", changeset: changeset, clients: clients, couriers: couriers, statuslist: statuslist)
     end
   end
 
@@ -80,7 +92,21 @@ defmodule ScriptdropWeb.OrderController do
         |> redirect(to: Routes.order_path(conn, :show, order))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", order: order, changeset: changeset)
+
+        clients =
+          Scriptdrop.Global.list_clients
+            |> Enum.map(&{"#{&1.name} at #{&1.address}", &1.id})
+
+        couriers =
+          Scriptdrop.Logistic.list_couriers_by_provider(conn.assigns.user.provider_id)
+            |> Enum.map(&{"#{&1.name}", &1.id})
+
+        statuslist =
+          Scriptdrop.Global.list_orderstatuses
+          |> Enum.map(&{"#{&1.description}", &1.id})
+
+
+        render(conn, "edit.html", order: order, changeset: changeset, clients: clients, couriers: couriers, statuslist: statuslist)
     end
   end
 

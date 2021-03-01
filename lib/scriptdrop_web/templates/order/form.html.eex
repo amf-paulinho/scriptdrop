@@ -28,11 +28,17 @@
   <%= time_select f, :pickup_time %>
   <%= error_tag f, :pickup_time %>
 
-  <%= label f, :status %>
-  <%= select f, :status, @statuslist %>
-  <%= error_tag f, :status %>
+  <%= if @action == "/orders" do %>
+    <%= label f, :status %>
+    <%= select f, :status, @statuslist %>
+    <%= error_tag f, :status %>
+  <% else %>
+     <%= hidden_input f, :status %>
+  <% end %>
 
   <%= hidden_input f, :user_id %>
+
+
 
   <div>
     <%= submit "Save" %>
