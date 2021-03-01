@@ -28,9 +28,9 @@
         text-align: center;
         /* Temporary Code - There are cleaner way to do it, also need to solve providermap filed bug - see Controller Action */
         background-color: <%=
-            if @conn.assigns.user && @conn.assigns.user.id do
+            if @conn.assigns.user && @conn.assigns.user.id && @conn.assigns.user.provider do
 
-               if @conn.assigns.user.provider == "Pharmacy" do
+               if String.contains? @conn.assigns.user.provider, "Pharmacy" do
                   "Blue"
                else
                   "Green"
