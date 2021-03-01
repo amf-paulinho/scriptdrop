@@ -67,7 +67,7 @@ both very simple to do using Phoenix.
 
 
 # Wrapping Up !
-## I want to say thank you
+## It was Awesome
 
 This experience was very enriching for me in several aspects, I accepted this challenge with zero knowledge about Elixir / Phoenix and only theory about 
 functional languages, the experience on this journey of just 7 days shows that we can learn and perform beyonde expectations if we leave our comfort zone
