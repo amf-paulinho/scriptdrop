@@ -3,69 +3,6 @@ defmodule Scriptdrop.LogisticTest do
 
   alias Scriptdrop.Logistic
 
-  describe "usercouriers" do
-    alias Scriptdrop.Logistic.UserCourier
-
-    @valid_attrs %{active: true, courier_id: 42, user_id: 42}
-    @update_attrs %{active: false, courier_id: 43, user_id: 43}
-    @invalid_attrs %{active: nil, courier_id: nil, user_id: nil}
-
-    def user_courier_fixture(attrs \\ %{}) do
-      {:ok, user_courier} =
-        attrs
-        |> Enum.into(@valid_attrs)
-        |> Logistic.create_user_courier()
-
-      user_courier
-    end
-
-    test "list_usercouriers/0 returns all usercouriers" do
-      user_courier = user_courier_fixture()
-      assert Logistic.list_usercouriers() == [user_courier]
-    end
-
-    test "get_user_courier!/1 returns the user_courier with given id" do
-      user_courier = user_courier_fixture()
-      assert Logistic.get_user_courier!(user_courier.id) == user_courier
-    end
-
-    test "create_user_courier/1 with valid data creates a user_courier" do
-      assert {:ok, %UserCourier{} = user_courier} = Logistic.create_user_courier(@valid_attrs)
-      assert user_courier.active == true
-      assert user_courier.courier_id == 42
-      assert user_courier.user_id == 42
-    end
-
-    test "create_user_courier/1 with invalid data returns error changeset" do
-      assert {:error, %Ecto.Changeset{}} = Logistic.create_user_courier(@invalid_attrs)
-    end
-
-    test "update_user_courier/2 with valid data updates the user_courier" do
-      user_courier = user_courier_fixture()
-      assert {:ok, %UserCourier{} = user_courier} = Logistic.update_user_courier(user_courier, @update_attrs)
-      assert user_courier.active == false
-      assert user_courier.courier_id == 43
-      assert user_courier.user_id == 43
-    end
-
-    test "update_user_courier/2 with invalid data returns error changeset" do
-      user_courier = user_courier_fixture()
-      assert {:error, %Ecto.Changeset{}} = Logistic.update_user_courier(user_courier, @invalid_attrs)
-      assert user_courier == Logistic.get_user_courier!(user_courier.id)
-    end
-
-    test "delete_user_courier/1 deletes the user_courier" do
-      user_courier = user_courier_fixture()
-      assert {:ok, %UserCourier{}} = Logistic.delete_user_courier(user_courier)
-      assert_raise Ecto.NoResultsError, fn -> Logistic.get_user_courier!(user_courier.id) end
-    end
-
-    test "change_user_courier/1 returns a user_courier changeset" do
-      user_courier = user_courier_fixture()
-      assert %Ecto.Changeset{} = Logistic.change_user_courier(user_courier)
-    end
-  end
-
   describe "providers" do
     alias Scriptdrop.Logistic.Provider
 

@@ -70,7 +70,7 @@
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <strong><i>I still have a lot to do!.</i></strong>
+                <strong><i>Even taking some risks extending what was asked for, I accomplished the Challenge!, but I still thinking that I have a lot to improve in the app!</i></strong>
 
                 <ul>
                     <li>
@@ -80,52 +80,25 @@
                         Develop a more user friendly Interface using Phoenix LiveView, Sockets or even VueJs
                     </li>
                     <li>
-                        More application security to prevent attacks
+                        Add Some filters availability to facilitate users life
                     </li>
                     <li>
-                        I think I did not put unique keys in some necessary places, I would like to double check Everything
-                    </li>
-                    <li>
-
-                        Change a bit the application  “phoenix contexts design patterns”, I don't think I made the best decisions in terms of clarity,
-                        but still pretty decent.
-
-                    </li>
-                    <li>
-                        Some features require filters availability to facilitate users life
-                    </li>
-                    <li>
-                        Using Socket to Change Order Status, I left a simple combo box, which can break down the business workflow.
-                    </li>
-                    <li>
-
-                        The home page, that is the control panel of pharmacies and couriers must be refactored.
-                        I am using an “IF” that I did not like, but to change this I would need more time to study Phoenix
-
-                    </li>
-                    <li>
-
-                        The system's administrative area should be rethought, but this would take a long time, so I looked for a solution
-                        that could show my skills and also solve the problem.
-
-                    </li>
-                    <li>
-                        Use more Elixir Pattern Match
+                        Improve the Order Workflow and Status Management. There are some gaps that need to be addressed
                     </li>
                     <li>
                         UI Data Formatting
                     </li>
                     <li>
-                        Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider'
+                        More application security to prevent attacks
                     </li>
                     <li>
-                        UI validation (message to the user)
+                        The home page, that is the control panel of pharmacies and couriers must be refactored.   I am using an “IF” that I did not like, but to change this I would need more time to study Phoenix so I deceided dont for now
                     </li>
                     <li>
-
-                        Solve a Bug that a left. I couldn't get the current local date, only UTC, this was frustrating, because I left it for fine-tuning
-                        thinking it would be commonplace, but it is not.
-
+                        The system's administrative area should be rethought, but this would take a long time, so I looked for a solution that could show my skills and also solve the problem.
+                    </li>
+                    <li>
+                        Solve a simple Bug that a left. I couldn't get the current local date, only UTC, this was frustrating, because I left it for fine-tuning thinking it would be commonplace, but it is not.
                     </li>
                     <li>
                         Replace Comboboxes to AutoComplete and enable in-line registration of customers, addresses, drugs, etc. For sure using LiveView or Sockets
@@ -134,7 +107,22 @@
                         Create a new entity in the database to track Orders (Business Workflow)
                     </li>
                     <li>
-                        Finish the functionality the able User to enter a list of items that compose an Order
+                        Make Order feature more real, including fields like: Order Date, etc
+                    </li>
+                    <li>
+                        I think I did not put unique keys in some necessary places, I would like to double check Everything
+                    </li>
+                    <li>
+                        Change a bit the application  “phoenix contexts design patterns”, I don't think I made the best decisions in terms of clarity, but still pretty decent.
+                    </li>
+                    <li>
+                        Use more Elixir Pattern Match
+                    </li>
+                    <li>
+                        Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider'
+                    </li>
+                    <li>
+                        I have to improve the test coverage
                     </li>
                 </ul>
 
@@ -151,7 +139,7 @@
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-                <strong><i>This Challange was well elaborated.</i></strong>
+                <strong><i>For sure this Challange was well desing!</i></strong>
 
                 <p>
                     In fact, this project is very interesting, because I think it was designed in a way that a Junior programmer has the sense of exceeding expectations
