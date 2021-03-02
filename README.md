@@ -3,26 +3,20 @@
 # What was the hardest part of the implementation?
 ## This is an excellent question!
 
-The fact that I was dedicated 100% to OOP languages in the past years, even though I had understood the paradigms of a functional language, 
-my brain was so used to OOP that it was difficult to find solutions some times, and even when I found them, I dont have doubts that I did not 
-take 100% advantage of Elixir's capabilities. This situation made me go back in time and relive the time when I was migrating from DeskTop 
-Development to Web Development. Being more specific, the biggest difficulty I faced was working with lists made up of Maps, Tuples or Structs 
-and also getting the most out of the Ecto Framework. I knew the concepts but was hard to apply them.
-Even the Business part of the application was very clear to me since the first glance in the requirements document, many times I felt like a 
-Junior trying to implement something simple and failing. As the days went by this was easing as expected.
+In the past years I was dedicated 100% to OOP languages and even though I had understood the paradigms of a functional language my brain was so used to OOP that often times was difficult to find solutions for simple problems and when I found them I dont have doubts that I did not take 100% advantage of Elixir's capabilities. This situation made me go back in time and relive the time when I was migrating from Desktop Development to Web Development; Being more specific, the biggest difficulty I faced was working with lists made up of Maps, Tuples or Structs and also getting the most out of the Ecto Framework; I knew the concepts but was hard to apply them. The Business part of the application was very clear to me since the first glance in the requirements document, but many times I felt like a Junior trying to implement something simple, often times failing and restarting the cycle. As the days went by this was easing as expected.
 
->Please, notice that a lot of decision that I had to take to implement a feature, I had to think and take into consideration all aspects of a test or challenge, not just Coding, so I wasn't just thinking in performance and best practice but how to show what I can do with Phoenix and Elixir, of course, I was taking in consideration Performance and Best Practices, but sometimes I gave preference to Show a coding Skill over it. So for sure, there are better ways to implement some features, performance-wise.
+>Please, notice that a lot of decision that I had to take to implement a feature I had to think and take into consideration all aspects of a test or challenge, not just Coding, so I wasn't just thinking in performance and best practice but how to show what I can do with Phoenix and Elixir; clarifying a bit: of course I was taking in consideration Performance and Best Practices, but sometimes I gave preference to Show a coding Skill and Language/Framework capabilities over it. So for sure there are better ways to implement some features, performance-wise and architecture-wise.
  
 # What would be your next couple of tasks if you had more time?
 ## Even taking some risks extending what was asked for, I accomplished the Challenge!, but I still thinking that I have a lot to improve in the app!
 
-- [ ] Use best practices to hide sensitive data, like secret keys from external APIs
+- [ ] Use best practices to hide sensitive data like secret keys from external APIs
 
-- [ ] Develop a more user friendly Interface using Phoenix LiveView, Sockets or even VueJs
+- [ ] Develop a more user friendly Interface using Phoenix LiveView, Sockets or even VueJs/ReactJs
 
-- [ ] Add Some filters availability to facilitate users life
+- [ ] Add Some filter feature in some pages to facilitate users life
 
-- [ ] Improve the Order Workflow and Status Management. There are some gaps that need to be addressed
+- [ ] Improve the Order Workflow and Status Management; There are some gaps that need to be addressed
 
 - [ ] UI Data Formatting
 
@@ -30,7 +24,7 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] More application security to prevent attacks
 
-- [ ] The home page, that is the control panel of pharmacies and couriers must be refactored.   I am using an “IF” that I did not like, but to change this I would need more time to study Phoenix so I deceided dont for now
+- [ ] The home page that is the 'control panel' of pharmacies and couriers must be refactored. I am using an “IF” that I did not like, but to change this I would need more time to study Phoenix so I deceided do not do it for now
 
 - [ ] The system's administrative area should be rethought, but this would take a long time, so I looked for a solution that could show my skills and also solve the problem.
 
@@ -40,19 +34,19 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] Make Order feature more real, including fields like: Order Date, breaking down field Address to City, State, Street, etc  and create a separeted entity in the database to store it.
 
-- [ ] I think I did not put unique keys in some necessary places, I would like to double check Everything
+- [ ] I think I did not put unique keys in some necessary places; I would like to double check Everything
 
-- [ ] Change a bit the application  “phoenix contexts design patterns”, I don't think I made the best decisions in terms of clarity, but still pretty decent.
+- [ ] Change a bit the application “phoenix contexts design patterns”, I don't think I made the best decisions in terms of clarity, but still pretty decent.
 
 - [ ] Use more Elixir Pattern Match
 
-- [ ] Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider', also in the table orders the field status was supposed to be status_id
+- [ ] Change a filed name in the Table Users (it can be confusing) change 'provider' to 'login_provider', also in the table orders the field 'status' was supposed to be 'status_id'
 
-- [ ] I have to improve the test coverage. Also I have some test failing due a big refactoring task. I had to fix it.
+- [ ] I have to improve the test coverage. Also I have some test failing due a big refactoring task I had done. I had to fix it.
 
-- [x] Improve a bit the functionality the able User to enter a list of items that compose an Order. What we have right now, basicly shows the concept. But it is pretty much well done.
+- [x] Improve a bit the functionality the able User to enter a list of items that compose an Order. What I have right now, basicly shows the concept. But it is pretty much well done.
 
-- [x] Using Socket to Change Order Status, I left a simple combo box, which can break down the business workflow.
+- [x] Using Socket to Change Order Status; I left a simple combo box, which can break down the business workflow.
 
 - [x] UI validation (message to the user)
 
@@ -62,12 +56,8 @@ Junior trying to implement something simple and failing. As the days went by thi
 # How could we change the project to be more interesting?
 ## For sure this Challange was well desing!
 
-In fact, this project is very interesting, because I think it was designed in a way that a Junior programmer has the sense of exceeding expectations 
-while a Senior would see small clues that show that the system is much deeper than it looks.
-Technically speaking, and taking into account the nature of the language and framework used, requesting requirements that require recursion would 
-further exploit the programmer's skills in respect to Elixir, another requirement that could be requested and would exploit the programmer's skills in 
-respect to the Phoenix Framework, it would be something related to the social platform, such as comments and evaluation of delivery or even a chat feature, 
-both very simple to do using Phoenix.
+In fact, this project is very interesting, because I think it was designed in a way that a Junior programmer has the sense of exceeding expectations while a Senior would see small clues that show that the system is much deeper than it looks.
+Technically speaking and taking into account the nature of the language and framework used, requesting somethig that requires recursion would further exploit the programmer's skills in respect to Elixir Language; another requirement that could be interesting and would exploit the programmer's skills in respect to the Phoenix Framework it would be something related to the social platforms, such as comments and delivery evaluation or even a chat feature, both very simple to acomplish using Phoenix.
 
 ![Zen](https://www.srtc.org/wp-content/uploads/2018/12/meditation-class-fremantle1-e1454334609459-1080x587.png)
 
@@ -75,15 +65,9 @@ both very simple to do using Phoenix.
 # Wrapping Up !
 ## It was Awesome
 
-This experience was very enriching in several aspects, I accepted this challenge with zero knowledge about Elixir / Phoenix and only theory about 
-functional languages, the experience on this journey of just 7 days shows that we can learn and perform beyonde expectations if we leave our comfort zone
-and challange the fear of the unknow. For several years I have been putting myself in situations like this and I advise everyone to do the same, if you
-have the desire to grown in all aspects of your life, you will not regret it. My ability to accept challenges in part is supported by my athleta and 
-martial artist backgroud and I always say that the most important in our challenges is the journey and not the destination. 
-Happiness is not at the destination, but in the Journey, so enjoy every step taken and live the moment, become the moment! 
-I will use the oppotunity to thank you Ben and Even though I am very interested in this position, for several aspects that I loved, now even more because
-Elixir / Phoenix, if I am not chosen one, I will still be very happy and thankfull. Today I feel comfortable adding Elixir / Phoenix to my resume without any hesitation
-and ready for more challanges.
+This experience was very enriching in several aspects; I accepted this challenge with zero knowledge about Elixir / Phoenix and only theory about functional languages; the experience on this journey of just 7 days shows that we can learn and perform beyonde expectations if we leave our comfort zone challanging the fear of the unknow. For several years I have been putting myself in situations like this and I recommend everyone to do the same ins case you have the drive to grown in all aspects of your life; you will not regret it. Talking a bit about my personal thoughts: My ability to accept challenges in part is supported by my athlete and martial artist background and I believe that the most important in our challenges is the journey and not the destination. Happiness is not at the destination, but during the Journey thogh. Enjoy every step taken and live the moment; become the moment! 
+I will use the oppotunity to thank you Ben and Even though I am very interested in this position for several aspects that I loved in the company and in the Position it self (now even more because Elixir/Phoenix), if I am not chosen one, I will still be very happy and thankfull. Today I feel comfortable adding Elixir / Phoenix to my resume without any hesitation
+and I am ready for more challanges.
 
 
 # System Login
