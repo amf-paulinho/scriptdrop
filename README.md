@@ -10,9 +10,8 @@ Development to Web Development. Being more specific, the biggest difficulty I fa
 and also getting the most out of the Ecto Framework. I knew the concepts but was hard to apply them.
 Even the Business part of the application was very clear to me since the first glance in the requirements document, many times I felt like a 
 Junior trying to implement something simple and failing. As the days went by this was easing as expected.
-Please, notice that a lot of decision that I had to take to implement a feature, I had to think and take into consideration 
 
-###all aspects of a test or challenge, not just Coding, so I wasn't just thinking in performance and best practice but how to show what I can do with Phoenix and Elixir, of course, I was taking in consideration Performance and Best Practices, but sometimes I gave preference to Show a coding Skill over it. So for sure, there are better ways to implement some features, performance-wise.
+### Please, notice that a lot of decision that I had to take to implement a feature, I had to think and take into consideration all aspects of a test or challenge, not just Coding, so I wasn't just thinking in performance and best practice but how to show what I can do with Phoenix and Elixir, of course, I was taking in consideration Performance and Best Practices, but sometimes I gave preference to Show a coding Skill over it. So for sure, there are better ways to implement some features, performance-wise.
  
 # What would be your next couple of tasks if you had more time?
 ## Even taking some risks extending what was asked for, I accomplished the Challenge!, but I still thinking that I have a lot to improve in the app!
