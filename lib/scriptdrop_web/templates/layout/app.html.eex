@@ -16,7 +16,15 @@
 
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
 
+    <script>
+        <%= if @conn.assigns.user && @conn.assigns.user.id do %>
+           window.userToken = '<%= Phoenix.Token.sign(ScriptdropWeb.Endpoint, "secretkey", @conn.assigns.user.id) %>'
+        <% end %>
+    </script>
 
+        <%= if @conn.assigns.user && @conn.assigns.user.id do %>
+          <%= tag :meta, name: "userToken", content: Phoenix.Token.sign(@conn, "secretkey", @conn.assigns.user.id) %>
+        <% end %>
 
     <style>
       .footer {

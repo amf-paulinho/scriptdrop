@@ -10,6 +10,7 @@ import {Socket} from "phoenix"
 
 let socket = new Socket("/socket", {params: {token: window.userToken}})
 
+
 // When you connect, you'll often need to authenticate the client.
 // For example, imagine you have an authentication plug, `MyAuth`,
 // which authenticates the session and assigns a `:current_user`.
@@ -54,7 +55,6 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 // Finally, connect to the socket:
 socket.connect()
 
-
 $("[changestatus='true']").click(function() {
 
   var orderId = $(this).data("id");
@@ -64,7 +64,6 @@ $("[changestatus='true']").click(function() {
   channel.join()
     .receive("ok", resp => { console.log("Joined successfully", resp) })
     .receive("error", resp => { console.log("Unable to join", resp) })
-
 
   channel.push(`Chance Status to: ${cancelStatus} in Order #${orderId}`, {status: cancelStatus});
 

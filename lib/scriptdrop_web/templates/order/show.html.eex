@@ -8,7 +8,7 @@
         <i class="fa fa-edit"></i> Edit order
       <% end %>
 
-      <a href="#" class="btn btn-warning" onclick="$('#exampleModalCenter').modal('show');">
+      <a data-toggle="tooltip" title='Refresh the page first (F5)' href="#" class="btn btn-warning" onclick="$('#modalTracking').modal('show');">
         <i class="fa fa-list"></i> Order Tracking
       </a>
   </li>
@@ -94,11 +94,11 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="modalTracking" tabindex="-1" role="dialog" aria-labelledby="modalTrackingTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-list"></i> Order Tracking </h5>
+        <h5 class="modal-title" id="modalTrackingTitle"><i class="fa fa-list"></i> Order Tracking </h5>
       </div>
       <div class="modal-body">
 

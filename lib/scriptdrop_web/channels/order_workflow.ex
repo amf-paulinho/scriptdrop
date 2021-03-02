@@ -15,7 +15,7 @@ defmodule ScriptdropWeb.OrderWorkflow do
 
     case Operation.update_order(order, %{status: status}) do
       {:ok, _order} ->
-        case Operation.create_order_workflow(%{order_id: socket.assigns.order_id, status: status, user_id: -2}) do
+        case Operation.create_order_workflow(%{order_id: socket.assigns.order_id, status: status, user_id: socket.assigns.user_id}) do
           {:ok, _order} ->
             {:reply, :ok, socket}
 
