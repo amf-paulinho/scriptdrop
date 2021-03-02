@@ -4,10 +4,13 @@
   <li>
     <strong>Order ID:</strong>
     <%= @order.id %>
-<%= link to: Routes.order_path(@conn, :edit, @order), class: "btn btn-info" do  %>
-  <i class="fa fa-edit"></i> Edit order
-<% end %>
+      <%= link to: Routes.order_path(@conn, :edit, @order), class: "btn btn-info" do  %>
+        <i class="fa fa-edit"></i> Edit order
+      <% end %>
 
+      <a href="#" class="btn btn-warning" onclick="$('#exampleModalCenter').modal('show');">
+        <i class="fa fa-list"></i> Order Tracking
+      </a>
   </li>
   <li>
     <strong>Patient Name:</strong>
@@ -16,7 +19,7 @@
 
   <li>
     <strong>Patient Address:</strong>
-    <%= @order.address %>
+    <%= @order.delivery_address %>
   </li>
 
   <li>
@@ -87,3 +90,58 @@
 <%= link to: Routes.order_path(@conn, :index), class: "btn btn-light" do  %>
   <i class="fa fa-undo fa-lg "></i> Back
 <% end %>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-list"></i> Order Tracking </h5>
+      </div>
+      <div class="modal-body">
+
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Status</th>
+              <th>At</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+        <%= for workflowitem <- @orderworkflow do %>
+            <tr>
+              <td><%= workflowitem.email %></td>
+              <td><%= workflowitem.status %></td>
+              <td><%= workflowitem.at %></td>
+              <td>
+                <%= if workflowitem.status_id == -1 do %>
+                    <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>' class="fa fa-times fa-lg text-danger"  ></i>
+                <% end %>
+
+                <%= if workflowitem.status_id == -2 do %>
+                    <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>' class="fa fa-check fa-lg text-success"  ></i>
+                <% end %>
+
+                <%= if workflowitem.status_id == -3 do %>
+                    <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>' class="fa fa-handshake-o fa-lg text-primary"  ></i>
+                <% end %>
+
+                <%= if workflowitem.status_id == -4 do %>
+                    <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>'  class="fa fa-clock-o fa-lg text-warning" ></i>
+                <% end %>
+              </td>
+            </tr>
+        <% end %>
+          </tbody>
+        </table>
+
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>

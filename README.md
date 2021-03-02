@@ -36,7 +36,7 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] Create a new entity in the database to track Orders (Business Workflow)
 
-- [ ] Make Order feature more real, including fields like: Order Date, etc 
+- [ ] Make Order feature more real, including fields like: Order Date, breaking down field Address to City, State, Street, etc  and create a separeted entity in the database to store it.
 
 - [ ] I think I did not put unique keys in some necessary places, I would like to double check Everything
 

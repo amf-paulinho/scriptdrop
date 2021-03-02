@@ -34,6 +34,9 @@ defmodule ScriptdropWeb.OrderController do
   def create(conn, %{"order" => order_params}) do
     case Operation.create_order(order_params) do
       {:ok, order} ->
+        # this should be in a transaction or a trigger
+        Operation.create_order_workflow(%{order_id: order.id, status: order.status, user_id: order.user_id})
+
         conn
         |> put_flash(:info, "Order created successfully.")
         |> redirect(to: Routes.order_path(conn, :show, order))
@@ -60,7 +63,9 @@ defmodule ScriptdropWeb.OrderController do
 
     orderitems = Operation.list_orderitems(id)
 
-    render(conn, "show.html", order: order, orderitems: orderitems)
+    orderworkflow = Operation.list_workflow(id)
+
+    render(conn, "show.html", order: order, orderitems: orderitems, orderworkflow: orderworkflow)
   end
 
   def edit(conn, %{"id" => id}) do

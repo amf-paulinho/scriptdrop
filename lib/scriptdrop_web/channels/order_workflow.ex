@@ -15,7 +15,13 @@ defmodule ScriptdropWeb.OrderWorkflow do
 
     case Operation.update_order(order, %{status: status}) do
       {:ok, _order} ->
-        {:reply, :ok, socket}
+        case Operation.create_order_workflow(%{order_id: socket.assigns.order_id, status: status, user_id: -2}) do
+          {:ok, _order} ->
+            {:reply, :ok, socket}
+
+          {:error, %Ecto.Changeset{} = changeset} ->
+            {:reply, {:error, %{errors: changeset }}, socket}
+        end
 
       {:error, %Ecto.Changeset{} = changeset} ->
         {:reply, {:error, %{errors: changeset }}, socket}

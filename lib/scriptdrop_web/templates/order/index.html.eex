@@ -16,7 +16,7 @@
 <%= for order <- @orders do %>
     <tr>
       <td><%= order.name %></td>
-      <td><%= order.address %></td>
+      <td><%= order.delivery_address %></td>
       <td><%= order.courier %></td>
       <td><%= order.pickup_date %> &nbsp <%= Time.truncate(order.pickup_time, :second) %></td>
       <td><%= order.status %></td>

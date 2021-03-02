@@ -282,4 +282,31 @@ defmodule Scriptdrop.Operation do
   def change_order_item(%OrderItem{} = order_item, attrs \\ %{}) do
     OrderItem.changeset(order_item, attrs)
   end
+
+  alias Scriptdrop.Operation.OrderWorkflow
+
+
+
+  def create_order_workflow(attrs \\ %{}) do
+    %OrderWorkflow{}
+    |> OrderWorkflow.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  def list_workflow(orderid) do
+
+    int = String.to_integer(orderid)
+
+    from( o in "ordersworkflow",
+      join: u in "users",
+      on: u.id == o.user_id,
+      join: s in "orderstatuses",
+      on: s.id == o.status,
+      where: o.order_id == ^int,
+      select: %Scriptdrop.Operation.OrderWorkflowAux{status_id: o.status, email: u.email, status: s.description, at: o.inserted_at})
+      |> Repo.all
+
+    end
+
+
 end
