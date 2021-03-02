@@ -24,6 +24,8 @@ Junior trying to implement something simple and failing. As the days went by thi
 
 - [ ] UI Data Formatting
 
+- [ ] Improve Server Call in View Pages (remove IFs)
+
 - [ ] More application security to prevent attacks
 
 - [ ] The home page, that is the control panel of pharmacies and couriers must be refactored.   I am using an “IF” that I did not like, but to change this I would need more time to study Phoenix so I deceided dont for now
@@ -33,8 +35,6 @@ Junior trying to implement something simple and failing. As the days went by thi
 - [ ] Solve a simple Bug that a left. I couldn't get the current local date, only UTC, this was frustrating, because I left it for fine-tuning thinking it would be commonplace, but it is not.
 
 - [ ] Replace Comboboxes to AutoComplete and enable in-line registration of customers, addresses, drugs, etc. For sure using LiveView or Sockets
-
-- [ ] Create a new entity in the database to track Orders (Business Workflow)
 
 - [ ] Make Order feature more real, including fields like: Order Date, breaking down field Address to City, State, Street, etc  and create a separeted entity in the database to store it.
 
@@ -53,6 +53,8 @@ Junior trying to implement something simple and failing. As the days went by thi
 - [x] Using Socket to Change Order Status, I left a simple combo box, which can break down the business workflow.
 
 - [x] UI validation (message to the user)
+
+- [x] Create a new entity in the database to track Orders (Business Workflow)
 
 
 # How could we change the project to be more interesting?
