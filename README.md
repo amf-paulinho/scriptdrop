@@ -105,7 +105,7 @@ I already created 2 GitHub accounts for test both already linked with Pharmacy a
   - Save
 
 # Database ERD
-![ERD](https://i.postimg.cc/dQ9kYBB5/scriptdropdb.png)
+![ERD](https://i.postimg.cc/QtpySqPT/scriptdropdb2-0.png)
 
 
 # Instalation
