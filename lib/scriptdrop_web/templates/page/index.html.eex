@@ -9,7 +9,7 @@
 <h1>Orders for the Day (<%= Date.utc_today %> UTC)</h1>
 
 
-<%= if @conn.assigns.user && @conn.assigns.user.providermap.role == 1 do %>
+<%= if @conn.assigns.user && @conn.assigns.user.providermap.role == 1 do %> <!-- Pharmacy View -->
   <table>
     <thead>
       <tr>
