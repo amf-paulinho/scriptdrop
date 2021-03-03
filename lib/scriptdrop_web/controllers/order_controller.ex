@@ -3,7 +3,6 @@ defmodule ScriptdropWeb.OrderController do
 
   alias Scriptdrop.Operation
   alias Scriptdrop.Operation.Order
-  alias Phoenix.LiveView
 
   plug Scriptdrop.Plugs.RequireAuth when action in [:new, :create, :edit, :update, :delete, :index, :show]
 

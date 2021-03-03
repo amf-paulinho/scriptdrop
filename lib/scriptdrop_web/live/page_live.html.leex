@@ -1,0 +1,14 @@
+<section class="phx-hero">
+  <h1><%= gettext "LiveView Test %{name}!", name: "123..." %></h1>
+  <p>Client Search</p>
+
+  <form phx-change="suggest" phx-submit="viewfile">
+    <input type="text" name="q" value="<%= @query %>" placeholder="Client search" list="results" autocomplete="off"/>
+    <datalist id="results">
+      <%= for item <- @results do %>
+        <option value="<%= item.name %>"><%= item.id %></option>
+      <% end %>
+    </datalist>
+    <button type="submit" phx-disable-with="Searching...">View Client File</button>
+  </form>
+</section>

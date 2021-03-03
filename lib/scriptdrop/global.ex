@@ -117,7 +117,14 @@ defmodule Scriptdrop.Global do
     Repo.all(Client)
   end
 
+  def suggest_clients(str) do
 
+  like = "%#{str}%"
+
+   from( c in "clients", where: ilike(c.name, ^like),
+          select: %{id: c.id, name: c.name})
+          |> Repo.all
+  end
 
 
   @doc """
