@@ -20,6 +20,9 @@ config :scriptdrop, ScriptdropWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
+  live_view: [
+    signing_salt: "629lsvW6r5SqzwC8hfDDS3MBUClfJJVe"
+  ],
   watchers: [
     node: [
       "node_modules/webpack/bin/webpack.js",

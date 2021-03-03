@@ -7,6 +7,7 @@ defmodule Scriptdrop.Operation do
   alias Scriptdrop.Repo
 
   alias Scriptdrop.Operation.Order
+  alias Scriptdrop.Operation.OrderItem
 
   @doc """
   Returns the list of orders.
@@ -130,6 +131,7 @@ defmodule Scriptdrop.Operation do
 
   """
   def create_order(attrs \\ %{}) do
+
     %Order{}
     |> Order.changeset(attrs)
     |> Repo.insert()
@@ -182,7 +184,6 @@ defmodule Scriptdrop.Operation do
     Order.changeset(order, attrs)
   end
 
-  alias Scriptdrop.Operation.OrderItem
 
   @doc """
   Returns the list of orderitems.

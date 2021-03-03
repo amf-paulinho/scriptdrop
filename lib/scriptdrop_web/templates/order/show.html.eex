@@ -7,10 +7,6 @@
       <%= link to: Routes.order_path(@conn, :edit, @order), class: "btn btn-info" do  %>
         <i class="fa fa-edit"></i> Edit order
       <% end %>
-
-      <a data-toggle="tooltip" title='Refresh the page first (F5)' href="#" class="btn btn-warning" onclick="$('#modalTracking').modal('show');">
-        <i class="fa fa-list"></i> Order Tracking
-      </a>
   </li>
   <li>
     <strong>Patient Name:</strong>
@@ -44,63 +40,68 @@
 
 </ul>
 
-<h2>Order items</h2>
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Order Items
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
 
-<table>
-  <thead>
-    <tr>
-      <th>Medication</th>
-      <th>Qty</th>
-      <th>Price</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for order_item <- @orderitems do %>
-    <tr>
-      <td><%= order_item.drug_id %></td>
-      <td><%= order_item.qty %></td>
-      <td><%= order_item.price %></td>
+          <table>
+            <thead>
+              <tr>
+                <th>Medication</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+          <%= for order_item <- @orderitems do %>
+              <tr>
+                <td><%= order_item.drug_id %></td>
+                <td><%= order_item.qty %></td>
+                <td><%= order_item.price %></td>
 
-      <td style="width: 115px;">
+                <td style="width: 115px;">
 
-        <%= link to: Routes.order_item_path(@conn, :show, order_item), class: "btn btn-info" do  %>
-          <i class="fa fa-eye fa-lg"></i>
-        <% end %>
+                  <%= link to: Routes.order_item_path(@conn, :show, order_item), class: "btn btn-info" do  %>
+                    <i class="fa fa-eye fa-lg"></i>
+                  <% end %>
 
-        <%= link to: Routes.order_item_path(@conn, :edit, order_item), class: "btn btn-info" do  %>
-          <i class="fa fa-pencil-square-o fa-lg"></i>
-        <% end %>
+                  <%= link to: Routes.order_item_path(@conn, :edit, order_item), class: "btn btn-info" do  %>
+                    <i class="fa fa-pencil-square-o fa-lg"></i>
+                  <% end %>
 
-        <%= link to: Routes.order_item_path(@conn, :delete, order_item), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" do %>
-          <i class="fa fa-trash-o fa-lg"></i>
-        <% end %>
+                  <%= link to: Routes.order_item_path(@conn, :delete, order_item), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" do %>
+                    <i class="fa fa-trash-o fa-lg"></i>
+                  <% end %>
 
-      </td>
+                </td>
 
-    </tr>
-<% end %>
-  </tbody>
-</table>
+              </tr>
+          <% end %>
+            </tbody>
+          </table>
 
-<%= link to: Routes.order_item_path(@conn, :new, @order.id), class: "btn btn-info" do  %>
-  <i class="fa fa-plus fa-lg "></i> Add Item
-<% end %>
+          <%= link to: Routes.order_item_path(@conn, :new, @order.id), class: "btn btn-info" do  %>
+            <i class="fa fa-plus fa-lg "></i> Add Item
+          <% end %>
 
-<%= link to: Routes.order_path(@conn, :index), class: "btn btn-light" do  %>
-  <i class="fa fa-undo fa-lg "></i> Back
-<% end %>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="modalTracking" tabindex="-1" role="dialog" aria-labelledby="modalTrackingTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalTrackingTitle"><i class="fa fa-list"></i> Order Tracking </h5>
       </div>
-      <div class="modal-body">
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Order Tracking
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
 
         <table>
           <thead>
@@ -112,36 +113,39 @@
             </tr>
           </thead>
           <tbody>
-        <%= for workflowitem <- @orderworkflow do %>
-            <tr>
-              <td><%= workflowitem.email %></td>
-              <td><%= workflowitem.status %></td>
-              <td><%= workflowitem.at %></td>
-              <td>
-                <%= if workflowitem.status_id == -1 do %>
-                    <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>' class="fa fa-times fa-lg text-danger"  ></i>
-                <% end %>
+                <%= for workflowitem <- @orderworkflow do %>
+                    <tr>
+                      <td><%= workflowitem.email %></td>
+                      <td><%= workflowitem.status %></td>
+                      <td><%= workflowitem.at %></td>
+                      <td>
+                        <%= if workflowitem.status_id == -1 do %>
+                            <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>' class="fa fa-times fa-lg text-danger"  ></i>
+                        <% end %>
 
-                <%= if workflowitem.status_id == -2 do %>
-                    <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>' class="fa fa-check fa-lg text-success"  ></i>
-                <% end %>
+                        <%= if workflowitem.status_id == -2 do %>
+                            <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>' class="fa fa-check fa-lg text-success"  ></i>
+                        <% end %>
 
-                <%= if workflowitem.status_id == -3 do %>
-                    <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>' class="fa fa-handshake-o fa-lg text-primary"  ></i>
-                <% end %>
+                        <%= if workflowitem.status_id == -3 do %>
+                            <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>' class="fa fa-handshake-o fa-lg text-primary"  ></i>
+                        <% end %>
 
-                <%= if workflowitem.status_id == -4 do %>
-                    <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>'  class="fa fa-clock-o fa-lg text-warning" ></i>
+                        <%= if workflowitem.status_id == -4 do %>
+                            <i changestatus='false' data-toggle="tooltip" title='Status: <%= workflowitem.status %>'  class="fa fa-clock-o fa-lg text-warning" ></i>
+                        <% end %>
+                      </td>
+                    </tr>
                 <% end %>
-              </td>
-            </tr>
-        <% end %>
           </tbody>
         </table>
 
-      </div>
-      <div class="modal-footer">
+
       </div>
     </div>
   </div>
 </div>
+
+<%= link to: Routes.order_path(@conn, :index), class: "btn btn-light" do  %>
+  <i class="fa fa-undo fa-lg "></i> Back
+<% end %>

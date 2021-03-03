@@ -47,8 +47,9 @@ defmodule Scriptdrop.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:ueberauth, "~> 0.6"},
       {:ueberauth_github, "~> 0.8"},
-      {:poison, "~> 3.1"}
-
+      {:poison, "~> 3.1"},
+      {:phoenix_live_view, "~> 0.15.4"},
+      {:floki, ">= 0.27.0", only: :test}	  
     ]
   end
 

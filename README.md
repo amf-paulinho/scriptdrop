@@ -44,6 +44,10 @@ In the past years I was dedicated 100% to OOP languages and even though I had un
 
 - [ ] I have to improve the test coverage. Also I have some test failing due a big refactoring task I had done. I had to fix it.
 
+- [ ] Ecto usage: Controling Transactios, Creating Triggers using migrations, Load Referenced Tables in the main Schema
+
+- [x] Ecto usage: Foreing Key using Delete Cascade
+
 - [x] Improve a bit the functionality the able User to enter a list of items that compose an Order. What I have right now, basicly shows the concept. But it is pretty much well done.
 
 - [x] Using Socket to Change Order Status; I left a simple combo box, which can break down the business workflow.

@@ -23,6 +23,9 @@ defmodule ScriptdropWeb do
 
       import Plug.Conn
       import ScriptdropWeb.Gettext
+
+      import Phoenix.LiveView.Controller
+
       alias ScriptdropWeb.Router.Helpers, as: Routes
     end
   end
@@ -32,6 +35,8 @@ defmodule ScriptdropWeb do
       use Phoenix.View,
         root: "lib/scriptdrop_web/templates",
         namespace: ScriptdropWeb
+        #root: "lib/<%= scriptdrop_web %>/templates",
+        #namespace: <%= ScriptdropWeb %>
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -48,6 +53,9 @@ defmodule ScriptdropWeb do
 
       import Plug.Conn
       import Phoenix.Controller
+
+      import Phoenix.LiveView.Router
+
     end
   end
 
@@ -66,11 +74,37 @@ defmodule ScriptdropWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
+      import Phoenix.LiveView.Helpers
+
       import ScriptdropWeb.ErrorHelpers
       import ScriptdropWeb.Gettext
+
+      #live liew
+      #import Phoenix.LiveView, only: [live_render: 2, live_render: 3]
+
       alias ScriptdropWeb.Router.Helpers, as: Routes
     end
   end
+
+  def live_view do
+    quote do
+      use Phoenix.LiveView,
+        layout: {ScriptdropWeb.LayoutView, "live.html"}
+
+        #  layout: {<%= web_namespace %>.LayoutView, "live.html"}
+
+      unquote(view_helpers())
+    end
+  end
+
+  def live_component do
+    quote do
+      use Phoenix.LiveComponent
+
+      unquote(view_helpers())
+    end
+  end
+
 
   @doc """
   When used, dispatch to the appropriate controller/view/etc.

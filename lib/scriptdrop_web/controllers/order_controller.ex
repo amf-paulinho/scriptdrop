@@ -3,6 +3,7 @@ defmodule ScriptdropWeb.OrderController do
 
   alias Scriptdrop.Operation
   alias Scriptdrop.Operation.Order
+  alias Phoenix.LiveView
 
   plug Scriptdrop.Plugs.RequireAuth when action in [:new, :create, :edit, :update, :delete, :index, :show]
 
@@ -59,6 +60,7 @@ defmodule ScriptdropWeb.OrderController do
   end
 
   def show(conn, %{"id" => id}) do
+
     order = Operation.get_order_to_show!(id)
 
     orderitems = Operation.list_orderitems(id)
@@ -117,6 +119,7 @@ defmodule ScriptdropWeb.OrderController do
 
   def delete(conn, %{"id" => id}) do
     order = Operation.get_order!(id)
+
     {:ok, _order} = Operation.delete_order(order)
 
     conn
