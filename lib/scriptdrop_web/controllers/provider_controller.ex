@@ -4,6 +4,8 @@ defmodule ScriptdropWeb.ProviderController do
   alias Scriptdrop.Logistic
   alias Scriptdrop.Logistic.Provider
 
+  #plug Scriptdrop.Plugs.RequireAuth when action in [:show]
+
   def index(conn, _params) do
     providers = Logistic.list_providers()
     render(conn, "index.html", providers: providers)
@@ -36,6 +38,7 @@ defmodule ScriptdropWeb.ProviderController do
   end
 
   def show(conn, %{"id" => id}) do
+    IO.puts("++++++++++++++++++++++++++++++")
     provider = Logistic.get_provider!(id)
     render(conn, "show.html", provider: provider)
   end

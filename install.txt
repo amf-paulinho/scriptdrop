@@ -1,0 +1,28 @@
+# -----------------------------------------------------------------
+# next task: Create a ShellScript to execute everything in once
+# -----------------------------------------------------------------
+# GitHub oAuth Production
+# -----------------------------------------------------------------
+# key: fb33dfcc8407090b139c
+# secret: 088a109fa45b63705267ec5ed900c4f3898a64ce
+# -----------------------------------------------------------------
+
+#Enviroment Vars
+$ export SECRET_KEY_BASE=hGRK3rOLbUX8qUnHpocgQqXREgS2teIa3/WN1gAbLAMnyENrNiAzURdr4iy1YIRr
+$ export DATABASE_URL=ecto://scriptdrop:masterkey@127.0.0.1/scriptdropdb
+
+#Initial setup
+$ mix deps.get --only prod
+$ MIX_ENV=prod mix compile
+
+#Compile assets
+#rm -rf assets/node_modules
+$ npm run deploy --prefix ./assets
+$ mix phx.digest
+
+# Custom tasks 
+$ MIX_ENV=prod mix ecto.migrate
+$ MIX_ENV=prod mix run priv/repo/seeds.exs
+
+# Finally run the server
+$ PORT=4000 MIX_ENV=prod elixir --erl "-detached" -S mix phx.server

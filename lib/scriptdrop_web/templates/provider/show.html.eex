@@ -19,7 +19,7 @@
 
 </ul>
 
-<%= link to: Routes.provider_path(@conn, :edit, @user), class: "btn btn-info" do  %>
+<%= link to: Routes.provider_path(@conn, :edit, @provider), class: "btn btn-info" do  %>
   <i class="fa fa-edit fa-lg "></i> Edit
 <% end %>
 
