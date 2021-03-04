@@ -113,4 +113,4 @@ I already created 2 GitHub accounts for testing both already linked with Pharmac
 # Up and Runing
 ### The software is runing at
 
-http://34.123.181.139:4000/about
+http://34.123.181.139:4000/
