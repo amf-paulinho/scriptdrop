@@ -19,7 +19,7 @@ defmodule ScriptdropWeb.Router do
   scope "/", ScriptdropWeb do
     pipe_through :browser
 
-    live "/live", PageLive, :index
+    #live "/live", PageLive, :index
 
     get "/", PageController, :index
     get "/about", PageController, :about
